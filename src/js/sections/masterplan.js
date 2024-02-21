@@ -161,8 +161,4 @@ export function masterplan() {
         modal360.classList.remove("shadow");
         modal360.classList.remove("modal360-active");
     }
-
-
-
-
 }
