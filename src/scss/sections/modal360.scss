@@ -1,0 +1,221 @@
+.modal360 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s ease;
+  }
+
+  .modal-btn__close-first {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s;
+    @include lg {
+      filter: invert(1);
+      top: 15px;
+      right: 15px;
+      width: 18px;
+      height: 18px;
+    }
+
+    svg {
+      @include lg  {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &-active {
+    .modal360__close-btn {
+      opacity: 0;
+      pointer-events: none;
+
+    }
+    .modal-btn__close-first {
+      opacity: 1;
+      z-index: 100;
+      cursor: pointer;
+    }
+  }
+
+  // .modal360__wrapper
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    width: 85vw;
+    height: 85vh;
+    pointer-events: auto;
+    background-color: #000;
+    transition: all 0.4s;
+
+    &::after {
+      content: "LOADING...";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    @include sm {
+      width: 95%;
+      height: 95%;
+    }
+  }
+
+  // .modal360__close-btn
+  &__close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    padding-bottom: 20px;
+    z-index: 11;
+    transition: all 0.4s;
+
+    @include lg {
+      padding-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  // .modal360__close-btn-ico
+  &__close-btn-ico {
+    width: 21px;
+    height: 21px;
+    position: relative;
+    background-image: url(../img/icons/x.svg);
+    background-repeat: no-repeat;
+    @include lg {
+      position: absolute;
+      top: 13px;
+      right: 13px;
+      background-color: rgba(0, 0, 0, 0.30);
+      width: 32px;
+      height: 32px;
+      padding: 10px;
+      background-position: center;
+    }
+    @include md {
+    }
+  }
+
+  // .modal360__iframe
+  &__iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+
+    iframe {
+      transition: all 0.4s;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-radius: 20px;
+    }
+
+    @include sm {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // .modal360__close-btn-title
+  &__close-btn-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include lg {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      background-color: rgba(0, 0, 0, 0.30);;
+      padding: 8px 13px;
+    }
+    
+    h5,
+    p {
+      line-height: 1;
+      text-align: center;
+      color: #fff;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+
+      @include sm {
+        opacity: 1;
+      }
+    }
+
+    h5 {
+      @include lg {
+        border: none;
+        background-color: #333333;
+      }
+      background-color: #fff;
+      color: #000;
+      border-radius: 4px;
+      width: 21px;
+      height: 21px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.close__modal-btn {
+  .modal360 {
+    .modal-btn__close-first {
+      opacity: 0;
+      cursor: auto;
+    }
+    .modal360__close-btn {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+  }
+}
+
+.open-popup__floor {
+  .modal360 {
+    .modal-btn__close-first {
+      opacity: 0;
+      cursor: auto;
+    }
+
+    .modal360__close-btn {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+  }
+}

@@ -1,0 +1,68 @@
+.privacy {
+    &-popup {
+        &__wrapper {
+            padding: 0;
+            overflow-y: scroll;
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        color: #28add6;
+        @include xl {
+            font-size: 50px;
+        }
+        @include lg {
+            font-size: 32px;
+        }
+        @include sm {
+            font-size: 24px;
+        }
+    }
+
+    &__content {
+        padding: 60px 50px;
+        @include lg {
+            padding: 30px;
+        }
+        @include sm {
+            padding: 30px 16px;
+        }
+
+        &-wrapper {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 30px;
+            @include sm {
+                margin-top: 20px;
+                gap: 20px;
+            }
+        }
+        &-title {
+            color: #333333;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 130%;
+            @include lg {
+                font-size: 20px;
+            }
+            @include sm {
+                font-size: 16px;
+                line-height: 100%;
+            }
+        }
+        &-text {
+            color: #333333;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 125%;
+            margin-top: 10px;
+            @include lg {
+                font-size: 14px;
+            }
+        }
+    }
+}

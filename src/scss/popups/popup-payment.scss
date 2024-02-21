@@ -1,0 +1,244 @@
+.payment-popup {
+  padding: 40px;
+  @include md {
+    padding: 20px;
+  }
+
+  // .payment-popup__wrapper
+  &__wrapper {
+    max-width: 1140px;
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    transition: all 0.5s;
+    @include md {
+      max-width: 100%;
+    }
+  }
+
+  // .payment-popup__close
+  &__close {
+  }
+
+  // .payment-popup__inner
+  &__inner {
+    width: 100%;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      background-image: url("../img/icons/gradient.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -0;
+      left: 30%;
+      width: 1107px;
+      height: 724px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(
+        90.05deg,
+        #9797976b 0%,
+        rgba(151, 151, 151, 0) 45%,
+        #97979773 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    @include md {
+      max-height: 80vh;
+      overflow: scroll;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+
+  // .payment-popup__head
+  &__head {
+    padding: 45px 80px;
+    @include md {
+      padding: 33px 22px;
+    }
+  }
+
+  // .payment-popup__sub
+  &__sub {
+    color: #ada08c;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    @include md {
+      font-size: 16px;
+      padding-bottom: 15px;
+    }
+  }
+
+  // .payment-popup__title
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    @include cinzelRegular;
+    @include md {
+      font-size: 32px;
+    }
+  }
+}
+
+.payment__swiper {
+  max-width: 1068px;
+  width: 100%;
+  height: 0;
+  margin: 0 auto;
+  // padding: 75px 0 85px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.5s;
+  transition-delay: 0s;
+
+  @include md {
+    padding: 0;
+    margin-top: 63px;
+  }
+
+  .paymentSwiper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    // max-width: 810px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    cursor: pointer;
+    display: none;
+    @include lg {
+      display: block;
+    }
+  }
+
+  // .payment__swiper-slide
+  &-slide {
+    position: relative;
+
+    &-body {
+      transform: translateY(100%);
+      transition: transform 0.5s;
+      transition-delay: 0s;
+
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      .payment__swiper-slide-body {
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          width: 1px;
+          height: 75px;
+          background-color: #b8b8b8;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .payment__swiper-slide-body {
+        transition-delay: 0s;
+        &::after {
+          @include lg {
+            display: none;
+          }
+        }
+      }
+    }
+    &:nth-child(1) {
+      .payment__swiper-slide-body {
+        transition-delay: 0s;
+        &::after {
+          @include md {
+            display: none;
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-size: 98px;
+      line-height: normal;
+      color: #fff;
+      text-align: center;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.22;
+      text-transform: uppercase;
+      color: #CFCFCF;
+      text-align: center;
+      font-weight: 300;
+    }
+  }
+}
+
+.payment-popup.popup-show {
+  .payment__swiper-slide {
+    &-body {
+      transition-delay: 0.4s;
+    }
+    &:nth-child(2) {
+      .payment__swiper-slide-body {
+        transition-delay: 0.3s;
+      }
+    }
+    &:nth-child(1) {
+      .payment__swiper-slide-body {
+        transition-delay: 0.2s;
+      }
+    }
+  }
+
+  .payment__swiper {
+    height: 280px;
+    transition-delay: 0.2s;
+    &-slide-body {
+      transform: translateY(0);
+    }
+  }
+
+}

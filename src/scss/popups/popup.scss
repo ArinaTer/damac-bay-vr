@@ -1,0 +1,121 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 150;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    &.popup-show {
+        visibility: visible;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    // .popup__wrapper
+    &__wrapper {
+        display: flex;
+        flex: 1 1 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+        z-index: 3;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.7s;
+
+        .popup-show & {
+            visibility: visible;
+            opacity: 1;
+            transition: 0.7s;
+        }
+    }
+
+    // .popup__close
+    &__close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 28px;
+        height: 28px;
+        padding: 5px;
+        z-index: 10;
+
+        &::before,
+        &::after {
+            content: "";
+            right: 0;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+
+        }
+
+        &::before {
+            top: calc(50% - 1px);
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+        }
+
+    }
+
+    // .popup__hide
+    &__hide {
+        z-index: 3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #00000099;
+        opacity: 0;
+
+        .popup-show & {
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+    }
+
+    input {
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0) inset !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+        }
+    }
+}
+
+@import "./popup-privacy";
+@import "./popup-developer";
+@import "./popup-brochure";
+@import "./popup-payment";
+@import "./popup-offer";
+@import "./popup-time";

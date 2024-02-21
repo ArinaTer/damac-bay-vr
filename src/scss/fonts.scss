@@ -1,0 +1,37 @@
+// Cinzel
+@include font-face("cinzelBold", "../files/fonts/Cinzel/Cinzel-Bold");
+@include font-face("cinzelRegular", "../files/fonts/Cinzel/Cinzel-Regular");
+
+// Rubik
+@include font-face("rubikExtraBold", "../files/fonts/Rubik/Rubik-ExtraBold");
+@include font-face("rubikLight", "../files/fonts/Rubik/Rubik-Light");
+@include font-face("rubikMedium", "../files/fonts/Rubik/Rubik-Medium");
+@include font-face("rubikRegular", "../files/fonts/Rubik/Rubik-Regular");
+
+
+// Cinzel
+@mixin cinzelBold {
+  font-family: "cinzelBold", Arial, sans-serif;
+}
+
+@mixin cinzelRegular {
+  font-family: "cinzelRegular", Arial, sans-serif;
+}
+
+// Rubik
+@mixin rubikExtraBold {
+	font-family: "rubikExtraBold", Arial, sans-serif;
+}
+
+@mixin rubikLight {
+	font-family: "rubikLight", Arial, sans-serif;
+}
+
+@mixin rubikMedium {
+	font-family: "rubikMedium", Arial, sans-serif;
+}
+
+@mixin rubikRegular {
+	font-family: "rubikRegular", Arial, sans-serif;
+}
+

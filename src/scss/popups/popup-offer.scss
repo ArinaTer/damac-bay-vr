@@ -1,0 +1,341 @@
+.offer-popup {
+  padding: 40px;
+  
+
+  @include md {
+    padding: 20px;
+  }
+
+  // .offer-popup__wrapper
+  &__wrapper {
+    background-color: transparent;
+    max-width: 975px;
+    width: 100%;
+    height: 660px;
+    padding: 0;
+    transition: all 0.5s;
+    // transition-delay: 1s;
+    @include lg {
+    }
+    @include md {
+
+    }
+    @include sm {
+    }
+  }
+
+  // .offer-popup__close
+  &__close {
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0s;
+    @include md {
+      top: 30px;
+      right: 10px;
+      opacity: 1;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+
+    @include md {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+
+  &__even {
+    position: relative;
+    max-width: 50%;
+    width: 100%;
+    height: 334px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: height 0.5s;
+    transition-delay: 0s;
+    @include lg {
+    }
+    @include md {
+
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      @include lg {
+      }
+      @include md {
+      }
+      @include sm {
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.8s;
+        transition-delay: 0s;
+
+        @include lg {
+        }
+
+        @include md {
+        }
+        @include sm {
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 145px;
+        // background-image: url("../img/specialOffer/bg.svg");
+        backdrop-filter: blur(14px);
+        --webkit-backdrop-filter: blur(14px);
+        transform: translateY(90%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+        transition: transform 0.5s;
+        transition-delay: 0s;
+
+        @include md {
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: url("../img/logos/damac-bay1.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.5s;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__odd {
+    position: relative;
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    // transition: opacity 0.8s;
+    // transition-delay: 0s;
+    @include lg {
+      width: 80%;
+    }
+    @include md {
+      opacity: 1;
+      transform: initial;
+      background-color: #000;
+      margin-top: -60px;
+      padding: 0 35px;
+      width: 100%;
+    }
+  }
+
+  &__top {
+    background-color: #000;
+    padding: 98px 50px;
+    border-radius: 20px;
+  }
+
+  &__title {
+    h3 {
+      color: #fff;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1;
+      text-transform: capitalize;
+      @include cinzelRegular;
+      @include md {
+        padding-left: 0;
+        font-size: 44px;
+      }
+      @include sm {
+        font-size: 36px;
+      }
+    }
+    @include md {
+      padding-bottom: 24px;
+    }
+    @include sm {
+      padding-bottom: 10px;
+    }
+  }
+
+  &__bottom {
+    background-color: #fff;
+    padding: 0 70px;
+    border-radius: 20px;
+    height: 60px;
+    overflow: hidden;
+    transition: height 0.5s;
+    transition-delay: 0s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    padding-bottom: 35px;
+    p {
+      color: #000;
+      font-size: 12px;
+      font-weight: 200;
+      line-height: 1.5;
+    }
+
+    @include md {
+      padding-bottom: 0;
+    }
+  }
+
+  &__form {
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0s;
+    &-input {
+      margin-bottom: 15px;
+      input {
+        border: none;
+        border-bottom: 0.5px solid #868686;
+        width: 100%;
+        padding: 10px 0 8px;
+        background-color: transparent;
+        color: #fff;
+        border-radius: 0;
+        font-size: 14px;
+
+        &:focus {
+          border: none;
+          border-bottom: 0.5px solid #000;
+          box-shadow: none;
+          outline: none;
+
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+
+        &::placeholder {
+          color: #888;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+          transition: background-color 5000s ease-in-out 0s;
+          -webkit-text-fill-color: #fff !important;
+        }
+      }
+
+      .iti {
+        .form-control {
+          text-align: left;
+        }
+      }
+
+      .iti__selected-dial-code {
+        font-size: 12px;
+        font-variant-numeric: lining-nums proportional-nums;
+        color: #888;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &-btn {
+      background: linear-gradient(0deg, #000000, #000000),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.17) 0%, rgba(255, 255, 255, 0) 100%);      
+      padding: 6px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 228px;
+      margin: 40px auto 0;
+      border-radius: 5px;
+
+      @include md {
+        margin: 35px auto 0;
+      }
+
+      span {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0.694px;
+        text-transform: uppercase;
+      }
+    }
+
+    @include md {
+      padding: 20px 0;
+    }
+    // @include sm {
+    //   padding: 30px 0;
+    // }
+  }
+}
+
+.offer-popup.popup-show {
+  .offer-popup__close {
+    opacity: 1;
+    transition-delay: 1.1s;
+  }
+  .offer-popup__even {
+    height: 100%;
+    transition-delay: 0.5s;
+    &-img {
+      &::after {
+        transform: translateY(0);
+        transition-delay: 0.6s;
+      }
+  
+      &::before {
+        opacity: 1;
+        transition-delay: 0.8s;
+      }
+    }
+
+  }
+
+  .offer-popup__bottom {
+    height: 388px;
+    transition-delay: 0.5s;
+  }
+
+  .offer-popup__form {
+    opacity: 1;
+    transition-delay: 0.8s;
+  }
+}

@@ -1,0 +1,91 @@
+@import "var";
+@import "mixin";
+@import "fonts";
+@import "imports";
+@import "settings";
+@import "config";
+
+// @import "../files/css/bootstrap-grid.min.css";
+
+:root {
+  --primary: #ada08c;
+  --bg-color: #f3f2ef;
+  --title-color: #919191;
+  --primary-text: #221f20;
+  --secondary-text: #919191;
+  --active-element: rgb(64, 64, 64, 0.05);
+  --inactive-text: #d9d9d9;
+  --color-brick: #b1694a;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-blue: #28add6;
+  --vh: 100svh;
+}
+
+body {
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  @include rubikLight;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0px;
+  }
+
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  //1440
+  @include xxl {
+  }
+  //1280
+  @include xl {
+  }
+  //992
+  @include lg {
+  }
+  //768
+  @include md {
+  }
+  //576
+  @include sm {
+  }
+}
+
+// styles for safari
+@supports (-webkit-hyphens: none) {
+  .safari_only {
+  }
+}
+
+/* (A) WRONG ORIENTATION - SHOW MESSAGE HIDE CONTENT */
+@media (max-device-width: 576px) and (orientation: landscape) {
+  #turn {
+    @include flex;
+  }
+
+  #scroller {
+    display: none;
+  }
+}
+
+/* (B) CORRECT ORIENTATION - SHOW CONTENT HIDE MESSAGE */
+@media (max-device-width: 576px) and (orientation: portrait) {
+  #turn {
+    display: none;
+  }
+
+  #scroller {
+    display: block;
+  }
+}
+
+@import "./sections/loader";
+@import "./sections/header";
+@import "./sections/intro";
+@import "sections/masterplan";
+@import "sections/footer";
+@import "popups/popup";
+@import "sections/modal360";

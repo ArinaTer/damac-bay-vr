@@ -1,0 +1,348 @@
+.brochure-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+
+  @include md {
+    padding: 20px;
+  }
+
+  // .brochure-popup__wrapper
+  &__wrapper {
+    background-color: transparent;
+    max-width: 1140px;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    transition: all 0.5s;
+    flex-direction: column;
+    gap: 10px;
+    @include xl {
+      height: 400px;
+    }
+    @include lg {
+      height: 500px;
+    }
+    @include md {
+      height: auto;
+      max-width: 100%;
+    }
+    // @include sm {
+    //   height: 100%;
+    // }
+  }
+
+  // .brochure-popup__close
+  &__close {
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0s;
+    @include md {
+      opacity: 1;
+    }
+  }
+
+  // .brochure-popup__top
+  &__top {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__img-desctop {
+    display: block;
+    @include md {
+      display: none;
+    }
+  }
+  &__img-mobile {
+    display: none;
+    margin-top: 60px;
+    position: relative;
+    @include md {
+      display: block;
+    }
+    @include sm {
+      margin-top: 40px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    clip-path: inset(0 30% 0 30%);
+    scale: 1.2;
+    transition: all 0.5s;
+    transition-delay: 0s;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  // .brochure-popup__bottom
+  &__bottom {
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay: 0s;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: translateY(20%);
+    @include lg {
+    }
+    @include md {
+      height: 100%;
+      opacity: 1;
+      transition-delay: initial;
+      margin-top: -40px;
+      padding: 0 35px;
+      height: auto;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(
+        90.05deg,
+        #9797976b 0%,
+        rgba(151, 151, 151, 0) 45%,
+        #97979773 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  }
+
+  // .brochure-popup__title
+  &__title {
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 1;
+    text-transform: capitalize;
+    color: #ffffff;
+    padding-left: 30px;
+    transition: all 0.5s;
+    transition-delay: 0s;
+    @include cinzelRegular;
+    position: absolute;
+    bottom: 125px;
+    left: 0;
+    // z-index: 1;
+    opacity: 0;
+
+    @include xl {
+      font-size: 62px;
+    }
+    @include lg {
+      bottom: 185px;
+    }
+    @include md {
+      position: relative;
+      bottom: initial;
+      left: initial;
+      font-size: 52px;
+      padding-left: 0;
+    }
+
+  }
+
+  &__text {
+    display: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 13.672px;
+    text-align: left;
+    padding-top: 22px;
+    @include md {
+      display: block;
+    }
+  }
+
+  // .brochure-popup__form
+  &__form {
+    padding: 30px 50px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    @include lg {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    @include md {
+      padding: 55px 0;
+    }
+    @include sm {
+      padding: 20px 0 40px;
+    }
+    @include sm {
+      padding: 30px 0;
+    }
+
+    &-container {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      gap: 18px;
+      @include md {
+        flex-direction: column;
+      }
+    }
+  }
+
+  // .brochure-popup__form-input
+  &__form-input {
+    width: 100%;
+
+    .iti {
+      .form-control {
+        text-align: left;
+      }
+    }
+
+    .iti__selected-dial-code {
+      font-size: 14px;
+      color: #f3f2ef;
+      font-variant-numeric: lining-nums proportional-nums;
+    }
+
+    .iti__country-list {
+      max-width: 330px;
+    }
+
+    .iti--separate-dial-code .iti__selected-flag {
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .iti__arrow {
+      border-top-color: #f3f2ef !important;
+      border-bottom-color: #f3f2ef !important;
+    }
+    input {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #f3f2ef;
+      border-bottom: 1px solid rgba(145, 145, 145, 0.5);
+      padding: 10px 4px;
+      border-radius: 0;
+
+      &::placeholder {
+        color: #f3f2ef;
+        font-size: 14px;
+      }
+
+      &:active,
+      &:hover,
+      &:focus {
+        outline: 0;
+        outline-offset: 0;
+      }
+      &:focus {
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  // .brochure-popup__form-btn
+  &__form-btn {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+      padding: 6px 10px;
+      width: 228px;
+      height: 100%;
+      border-radius: 5px;
+      transition: all 0.5s;
+
+
+
+      img {
+        width: 0;
+        transition: width 0.5s;
+        transform: translateX(10px);
+        height: 8px;
+      }
+
+      &:hover {
+
+        img {
+          transform: translateX(10px);
+          width: 23px;
+        }
+      }
+
+      @include md {
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 1.5;
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+
+        @include md {
+        }
+      }
+    }
+  }
+}
+
+
+.brochure-popup.popup-show {
+  .brochure-popup__img {
+    clip-path: inset(0 0 0 0);
+    scale: 1;
+    transition-delay: 0.3s;
+  }
+  .brochure-popup__title {
+    opacity: 1;
+    transition-delay: 0.5s;
+  }
+  .brochure-popup__close {
+    opacity: 1;
+    transition-delay: 0.5s;
+  }
+  .brochure-popup__bottom {
+    opacity: 1;
+    height: 100%;
+    transition-delay: 0.4s;
+    transform: translateY(0%);
+  }
+}

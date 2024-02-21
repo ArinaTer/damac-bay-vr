@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Cinzel';
+    src: url('Cinzel-Regular.eot');
+    src: local('Cinzel Regular'), local('Cinzel-Regular'),
+        url('Cinzel-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Cinzel-Regular.woff2') format('woff2'),
+        url('Cinzel-Regular.woff') format('woff'),
+        url('Cinzel-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('Cinzel-Bold.eot');
+    src: local('Cinzel Bold'), local('Cinzel-Bold'),
+        url('Cinzel-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Cinzel-Bold.woff2') format('woff2'),
+        url('Cinzel-Bold.woff') format('woff'),
+        url('Cinzel-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

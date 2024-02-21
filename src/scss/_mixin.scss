@@ -1,0 +1,80 @@
+@mixin flex($jc: center, $ai: center) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin inline-flex($jc: center, $ai: center) {
+    display: inline-flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin bg($url: "", $x: center, $y: center, $size: cover, $repeat: no-repeat) {
+    background-image: url($url);
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $x $y;
+}
+
+
+// media
+@mixin xxl {
+  @media screen and (max-width: 1439.98px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (max-width: 1279.98px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: 575.98px) {
+    @content;
+  }
+}
+
+//font
+@mixin f($name, $font-size: null, $letter-spacing: null) {
+  $font-family: null;
+
+  @if $name == "l" {
+    $font-family: "light";
+    font-family: $font-family;
+    font-weight: normal;
+  }
+
+  @if $font-size != null {
+    font-size: #{$font-size} + px;
+  }
+
+  @if $letter-spacing != null {
+    letter-spacing: (#{$letter-spacing} / 1000) + em;
+  }
+}
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: #{$font-family};
+    font-weight: $weight;
+    font-style: $style;
+    src: url("#{$file-path}.woff2") format("woff2"),
+      url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.ttf") format("truetype");
+  }
+}

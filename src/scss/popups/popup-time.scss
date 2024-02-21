@@ -1,0 +1,299 @@
+.time-popup {
+  padding: 40px;
+
+  @include lg {
+    padding: 20px;
+  }
+
+  // .time-popup__wrapper
+  &__wrapper {
+    max-width: 914px;
+    padding: 0;
+    background-color: transparent;
+    height: auto;
+
+    @include md {
+      max-width: 440px;
+    }
+  }
+
+  // .time-popup__close
+  &__close {
+    &::after,
+    &::before {
+      background-color: rgb(0, 0, 0);
+    }
+    @include lg {
+    }
+  }
+
+  // .time-popup__inner
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(
+        90.05deg,
+        #979797 0%,
+        rgba(151, 151, 151, 0) 45%,
+        #979797 100%
+      ),
+      linear-gradient(0deg, #f3f2ef, #f3f2ef);
+
+    @include md {
+    }
+  }
+
+  // .time-popup__info
+  &__info {
+    width: 50%;
+    padding: 30px 25px;
+    border-radius: 0 20px 20px 0;
+    background: linear-gradient(0deg, #000000, #000000),
+      linear-gradient(
+        90.05deg,
+        #979797 0%,
+        rgba(151, 151, 151, 0) 45%,
+        #979797 100%
+      );
+
+    @include lg {
+      padding: 30px 20px;
+    }
+
+    @include md {
+      width: 100%;
+    }
+
+    @include sm {
+      padding: 20px 16px;
+    }
+  }
+
+  // .time-popup__sub
+  &__sub {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #ada08c;
+
+    @include lg {
+      font-size: 16px;
+    }
+  }
+
+  // .time-popup__title
+  &__title {
+    font-size: 30px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+    @include cinzelRegular;
+    padding-top: 20px;
+
+    @include lg {
+      font-size: 20px;
+    }
+
+    // @include sm {
+    //   font-size: 18px;
+    // }
+  }
+
+  // .time-popup__text
+  &__text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-top: 20px;
+    color: #fff;
+
+    @include lg {
+      margin-top: 30px;
+    }
+    @include sm {
+      font-size: 12px;
+      margin-top: 16px;
+    }
+  }
+
+  // .time-popup__form
+  &__form {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+    padding: 44px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f3f2ef;
+    gap: 25px;
+
+    @include lg {
+      gap: 24px;
+      padding: 30px 20px 20px;
+    }
+
+    @include md {
+      width: 100%;
+    }
+
+    @include sm {
+      padding: 20px 16px;
+      gap: 5px;
+    }
+  }
+
+  // .time-popup__form-input
+  &__form-input {
+    width: 100%;
+    .iti {
+      .form-control {
+        text-align: left;
+      }
+      input {
+      padding: 15px 15px;
+      padding-left: 110px !important;
+      }
+    }
+
+    .iti__selected-dial-code {
+      font-size: 16px;
+      font-variant-numeric: lining-nums proportional-nums;
+      color: #888;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    input {
+      border: none;
+      border-bottom: 0.5px solid #ccc;
+      width: 100%;
+      padding: 0 15px 14px;
+      background-color: transparent;
+      border-radius: 0;
+      font-size: 16px;
+
+      &:focus {
+        border: none;
+        border-bottom: 0.5px solid rgb(126, 126, 126);
+        box-shadow: none;
+        outline: none;
+
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+
+      &::placeholder {
+        color: #000;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: #000 !important;
+      }
+    }
+  }
+
+  // .time-popup__form-btn
+  &__form-btn {
+    background-color: #1a1a1a;
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    text-transform: uppercase;
+    align-items: center;
+    font-weight: 400;
+    transition: all 0.3s ease-out 0s;
+    margin-top: 20px;
+
+    span {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 150%;
+      text-transform: uppercase;
+      overflow: hidden;
+    }
+
+    img {
+      width: 0;
+      transition: all 0.5s;
+    }
+    @media (min-width: 767.99px) {
+      &:hover {
+        img {
+          width: 48px;
+        }
+      }
+    }
+  }
+
+  // .time-popup__contacts
+  &__contacts {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    padding: 28px;
+    gap: 30px;
+    @include md {
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 28px 16px;
+    }
+  }
+
+  // .time-popup__contacts-title
+  &__contacts-title {
+    color: #ada08c;
+    font-size: 18px;
+    line-height: 1.22;
+    text-transform: uppercase;
+
+    @include md {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  // time-popup__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3f2ef;
+    font-size: 16px;
+    gap: 10px;
+
+    @include md {
+      gap: 6px;
+    }
+
+    &.phone-replace-only {
+      gap: 0;
+
+      &::before {
+        content: url("../img/icons/gold-phone.svg");
+        line-height: 0;
+        margin-right: 10px;
+      }
+    }
+  }
+}
