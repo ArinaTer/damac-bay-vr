@@ -87,6 +87,9 @@
     @include xl {
       gap: 24px;
     }
+    @include lg {
+      display: none;
+    }
   }
 
   // .header__nav-btn
@@ -96,6 +99,11 @@
     color: #ffffff;
     font-weight: 400;
     @include rubikRegular;
+
+    @media (min-width: 1920px) {
+      font-size: 16px;
+    }
+
 
     .privacyPopup &,
     .open-menu & {
@@ -149,6 +157,9 @@
       line-height: 120%;
       text-transform: uppercase;
       @include rubikRegular;
+      @media (min-width: 1920px) {
+        font-size: 16px;
+      }
     }
 
     button {
@@ -159,6 +170,9 @@
       background: rgba(230, 230, 230, 1);
       border-radius: 4px;
       padding: 5px;
+      @media (min-width: 1920px) {
+        font-size: 16px;
+      }
     }
 
     .privacyPopup &,
