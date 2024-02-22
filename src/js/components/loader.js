@@ -11,7 +11,7 @@ export function loader() {
   let loadingPerc = 0;
   const totalMedia = mediaElements.length;
   const failedMediaList = [];
-  console.log({totalMedia, mediaElements});
+
   let loadedMedia = 0;
 
   const tlLoading = gsap.timeline({
@@ -24,7 +24,6 @@ export function loader() {
     loadedMedia++;
     const loadedP = Math.floor((loadedMedia / totalMedia) * 100);
     const path = 100 - loadedP;
-    console.log(loadedMedia);
 
     await gsap.to(".loading-logo__loading", {
       clipPath: `inset(0 ${path}% 0 0)`,

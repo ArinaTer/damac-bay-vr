@@ -1,13 +1,11 @@
 import { setStylesForMediaCopyRight } from "../media_copy_right/js/set_styles_for_media_copy_right.js";
-import { setCopyRightTo } from "../media_copy_right/js/set_copytight_to.js";
+import { setCopyRightTo } from '../media_copy_right/js/set_copytight_to.js';
 
 const parentWindow = window.parent;
 const matches = window.matchMedia("(max-width: 800px)").matches;
 const matcheMobile = window.matchMedia("(max-width: 1004px)").matches;
 
-const slidesItem = document.querySelectorAll(
-  ".modal-center__swiper .swiper-slide"
-);
+const slidesItem = document.querySelectorAll(".modal-center__swiper .swiper-slide");
 const slidesImg = document.querySelectorAll(".swiper-slide__img");
 const openBtns = document.querySelectorAll(".modal-btn__open");
 const closeBtns = Array.from(document.querySelectorAll(".modal-btn__close"));
@@ -17,13 +15,16 @@ const closeBtnsFirst = parentWindow.document.querySelector(
 const allSwipers = document.querySelectorAll(".modal-center__swiper .swiper");
 let swiperSlideTo = [];
 
-const swiperContainer = document.querySelector(".modal-center__swiper");
+const swiperContainer = document.querySelector(".modal-center__slider");
 
 closeBtns.push(closeBtnsFirst);
 const slidesLength = slidesItem.length;
 
 const isIpade = window.matchMedia("(max-width:1170px)").matches;
 isIpade;
+
+const modal360Active = parentWindow.document.querySelector(".modal360");
+
 
 // PhotoSphereViewer 360VR
 const viewer = new PhotoSphereViewer.Viewer({
@@ -42,20 +43,27 @@ const viewer = new PhotoSphereViewer.Viewer({
   },
 });
 
-viewer.addEventListener(
-  "ready",
-  (e) => {
-    setCopyRightTo(".psv-container", true);
-    document.body.classList.add("active-modal");
-  },
-  { once: true }
-);
+viewer.addEventListener('fullscreen', ({ data }) => {
+  document.documentElement.classList.toggle('opened-fullscreen');
+  modal360Active.classList.toggle("modal360-fullscreen")
+
+  if(document.body.classList.contains("active-popaps")){
+    modal360Active.classList.toggle("modal360-active")
+  }
+
+});
+
+viewer.addEventListener('ready', (e) => {
+  setCopyRightTo('.psv-container', true);
+  document.body.classList.add("active-modal")
+}, { once: true });
 
 const fakeFullscrenn = document.querySelector(".btn-fake");
 
-fakeFullscrenn.addEventListener("click", () => {
-  document.body.classList.toggle("fake-fullscreen");
+fakeFullscrenn.addEventListener("click", ()=> {
+  document.body.classList.toggle("fake-fullscreen")
 });
+
 
 function toggleActiveClass(e) {
   const target = e.target.closest(".modal-center__swiper .swiper-slide");
@@ -91,10 +99,10 @@ allSwipers.forEach((swiper) => {
   });
 });
 
+
+
 allSwipers.forEach((swiperContainer) => {
-  const slidesLength = swiperContainer.querySelectorAll(
-    ".modal-center__swiper .swiper-slide"
-  ).length;
+  const slidesLength = swiperContainer.querySelectorAll(".modal-center__swiper .swiper-slide").length;
 
   const swiperInstance = new Swiper(swiperContainer, {
     slidesPerView:
@@ -142,10 +150,8 @@ allSwipers.forEach((swiperContainer) => {
 
   if (matcheMobile) {
     allSwipers.forEach(function (swiper) {
-      const slidesLength = swiper.querySelectorAll(
-        ".modal-center__swiper .swiper-slide"
-      ).length;
-
+      const slidesLength = swiper.querySelectorAll(".modal-center__swiper .swiper-slide").length;
+  
       if (slidesLength === 1) {
         swiper.style.width = "80px";
       } else if (slidesLength >= 2 && slidesLength <= 4) {
@@ -156,10 +162,8 @@ allSwipers.forEach((swiperContainer) => {
     });
   } else {
     allSwipers.forEach(function (swiper) {
-      const slidesLength = swiper.querySelectorAll(
-        ".modal-center__swiper .swiper-slide"
-      ).length;
-
+      const slidesLength = swiper.querySelectorAll(".modal-center__swiper .swiper-slide").length;
+  
       if (slidesLength === 1) {
         swiper.style.width = "85px";
       } else if (slidesLength >= 2 && slidesLength < 5) {
@@ -169,7 +173,9 @@ allSwipers.forEach((swiperContainer) => {
       }
     });
   }
+
 });
+
 
 // openBtns (360, Gallery, Floorplan, Info. BTNS)
 openBtns.forEach((openBtn) => {
@@ -179,15 +185,27 @@ openBtns.forEach((openBtn) => {
     openBtns.forEach((openBtn) => {
       openBtn.classList.remove("active");
       document.body.classList.remove("active-popaps");
+
+      parentWindow.document
+        .querySelector(".modal360")
+        .classList.remove("modal360-active");
     });
 
     openBtn.classList.add("active");
     document.body.classList.add("active-popaps");
 
+    parentWindow.document
+      .querySelector(".modal360")
+      .classList.add("modal360-active");
+
     const modalElement = document.getElementById(modalAttribute);
     if (modalElement) {
       modalElement.classList.add("active");
       document.body.classList.add("active-popaps");
+
+      parentWindow.document
+        .querySelector(".modal360")
+        .classList.add("modal360-active");
     }
   });
 });
@@ -203,15 +221,25 @@ function closePopup() {
   activeModals.forEach((modal) => {
     modal.classList.remove("active");
     document.body.classList.remove("active-popaps");
+
+
+    parentWindow.document
+      .querySelector(".modal360")
+      .classList.remove("modal360-active");
   });
 
   openBtns.forEach((openBtn) => {
     openBtn.classList.remove("active");
     document.body.classList.remove("active-popaps");
+    
+    parentWindow.document
+      .querySelector(".modal360")
+      .classList.remove("modal360-active");
   });
 }
 setTimeout(() => {
   const galleryBtn = document.querySelector(".gallery__btn");
+
 
   galleryBtn.addEventListener("click", () => {
     parentWindow.document.body.classList.add("close__modal-btn");
@@ -226,7 +254,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     },
     initLayout: () => {
       setCopyRightTo(".fancybox__footer", false);
-    },
+    }
   },
 });
 

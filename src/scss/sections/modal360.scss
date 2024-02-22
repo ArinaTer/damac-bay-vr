@@ -125,6 +125,12 @@
     }
   }
 
+  &.modal360-fullscreen {
+    iframe {
+      border-radius: 0;
+    }
+  }
+
   // .modal360__iframe
   &__iframe {
     width: 100%;

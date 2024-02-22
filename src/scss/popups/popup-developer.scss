@@ -31,16 +31,20 @@
 
   // .developer-popup__close
   &__close {
+    opacity: 0;
+    // transition: opacity 0.5s;
+    // transition-delay: 0s;
   }
 
   // .developer-popup__content
   &__content {
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
     overflow: hidden;
-    padding: 40px 55px 70px 115px;
+    padding: 40px 85px 70px;
+    clip-path: inset(15% 25% 15% 25%);
+    background: rgba(0, 0, 0, 0);
+    transition: clip-path 0.5s;
 
     &::after {
       content: "";
@@ -77,10 +81,6 @@
       pointer-events: none;
     }
 
-    @include md {
-      border-top-right-radius: 0;
-    }
-
     @include lg {
       height: 100%;
     }
@@ -99,6 +99,7 @@
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 7px;
+    opacity: 0;
     @include md {
       font-size: 20px;
       text-align: center;
@@ -108,6 +109,7 @@
   // .developer-popup__title
   &__title {
     color: #fff;
+    opacity: 0;
     @include cinzelRegular;
     font-size: 50px;
     font-weight: 400;
@@ -136,7 +138,6 @@
   // .developer-popup__even
   &__even {
     width: 50%;
-    position: relative;
     z-index: 1;
     @include lg {
       width: 100%;
@@ -153,6 +154,7 @@
   // .developer-popup__odd
   &__odd {
     width: 50%;
+    opacity: 0;
     // padding: 40px;
     position: relative;
     z-index: 2;
@@ -172,16 +174,46 @@
 
     &-container {
       // opacity: 0;
-      transition: opacity 0.5s;
-      transition-delay: 0s;
+      // transition: opacity 0.5s;
+      // transition-delay: 0s;
     }
   }
 
   // .developer-popup__img
   &__img {
-    height: 100%;
+    // height: 100%;
     border-radius: 20px;
     overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+
+    &-bg {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      opacity: 1;
+    }
+
+    &-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url("../img/logos/logo-footer.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 80%;
+      height: 80%;
+      z-index: 1;
+      opacity: 1;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -304,45 +336,30 @@
 }
 
 // .developer-popup.popup-show {
-//   .developer-popup__inner {
-//     transition-delay: 0.5s;
-//     border-top-right-radius: 150px;
 
-//     @include md {
-//       border-top-right-radius: 130px;
-//     }
-//   }
-//   .developer-popup__even {
-//     &::after {
+//   .developer-popup__img {
+//     // transition-delay: 0.5s;
+//     transition-delay: 2s, 2s, 2s, 2s, 2s;
+//     // transition-property: position, top, left, transform;
+//     transform: translate(-50%, -50%);
+//     scale: 1;
+
+//     &::after{
 //       content: "";
-//       transform: translateX(100%);
-//       transition-delay: 0.4s;
-//       @include lg {
-//         transform: translateX(-100%);
-//         transition-delay: 0.3s;
-//       }
-//     }
-//   }
+//       opacity: 0;
+//       transition-delay: 2s;
 
-//   .developer-popup__odd-container {
-//     opacity: 1;
-//     transition-delay: 0.5s;
+//     }
+//     &::before{
+//       content: "";
+//       opacity: 0;
+//       transition-delay: 2s;
+//     }
 //   }
-//   .developer-popup__headline {
-//     opacity: 0;
-//     transition-delay: 0.3s;
-//   }
-
-//   .developer-popup__statis-item {
-//     transform: translateY(0);
-//     &:nth-child(1) {
-//       transition-delay: 0.5s;
-//     }
-//     &:nth-child(2) {
-//       transition-delay: 0.52s;
-//     }
-//     &:nth-child(3) {
-//       transition-delay: 0.54s;
-//     }
+//   .developer-popup__content {
+//     // background: rgba(0, 0, 0, 0.9);
+//     // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//     // clip-path: inset(0% 0% 0% 0%);
+//     // transition-delay: 1.5s;
 //   }
 // }
