@@ -74,12 +74,11 @@
     }
   }
 
-
   // .payment-popup__head
   &__head {
     padding: 45px 80px;
     @include md {
-      padding: 33px 22px;
+      padding: 33px 22px 0;
     }
   }
 
@@ -127,8 +126,9 @@
   transition-delay: 0s;
 
   @include md {
-    padding: 0;
-    margin-top: 63px;
+    padding: 50px 0;
+    margin-top: 0;
+    height: 100%;
   }
 
   .paymentSwiper {
@@ -158,7 +158,9 @@
       transform: translateY(100%);
       transition: transform 0.5s;
       transition-delay: 0s;
-
+      @include lg {
+        transform: initial;
+      }
     }
 
     &:nth-child(1),
@@ -209,7 +211,7 @@
       font-size: 18px;
       line-height: 1.22;
       text-transform: uppercase;
-      color: #CFCFCF;
+      color: #cfcfcf;
       text-align: center;
       font-weight: 300;
     }
@@ -236,9 +238,15 @@
   .payment__swiper {
     height: 280px;
     transition-delay: 0.2s;
+    @include md {
+      height: 100%;
+      transition-delay: initial;
+    }
     &-slide-body {
       transform: translateY(0);
+      @include md {
+        transform: initial;
+      }
     }
   }
-
 }

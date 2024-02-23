@@ -40,7 +40,6 @@ export function loader() {
               setTimeout(() => {
                 document.documentElement.classList.remove("loading");
                 document.documentElement.classList.add("loaded");
-                gsapIntro();
                 if (showPopup) {
                   updateTimeOut();
                 }
@@ -54,44 +53,7 @@ export function loader() {
 
 
   }
-  // function gsapIntro() {
-  //   let tlIntro = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".intro",
-  //       // markers: true,
-  //     },
-  //   });
-  //   tlIntro.to(".intro__bg", {
-  //       opacity: 1,
-  //       delay: 0.2,
-  //       duration: 0.5,
-  //     });
 
-  //   tlIntro.to(".header", {
-  //     opacity: 1,
-  //     duration: 0.5,
-  //   });
-  //   tlIntro.to(".intro__even", {
-  //       scale: 1,
-  //       duration: 0.5,
-  //       opacity: 1,
-  //     },"<");
-  //     tlIntro.to(".intro__odd", {
-  //       scale: 1,
-  //       duration: 0.5,
-  //       opacity: 1,
-  //     },"<");
-
-  //     tlIntro.to(".intro__bottom", {
-  //       scale: 1,
-  //       duration: 0.5,
-  //       opacity: 1,
-  //     },"<");
-  //     tlIntro.to(".intro__scrollto", {
-  //       opacity: 1,
-  //       duration: 0.5,
-  //     });
-  // }
   mediaElements.forEach((media) => {
     const dataSrc = media.getAttribute("data-src");
 

@@ -1184,39 +1184,49 @@ button {
     background-color: #000;
     flex-direction: column;
     justify-content: center;
-    padding: 65px 0 15px;
+    padding: 80px 0 35px;
     z-index: 1;
-    height: 175px;
+    height: 185px;
+    align-items: center;
+    gap: 15px;
     &__slider {
       justify-content: center;
-      max-width: 415px;
+      max-width: 320px;
+      height: 50px;
       margin: 0 auto;
       gap: 15px;
     }
     &__btns {
       justify-content: center;
       gap: 15px;
-      height: 30px;
+      position: relative;
+      right: initial;
     }
     &__btn {
       border: 0.3px solid rgba(255, 255, 255, 0.7);
       color: rgba(255, 255, 255, 0.7);
       text-transform: uppercase;
+      height: 36px;
+
     }
   }
+  
 
   .modal-right {
-    bottom: 120px;
+    bottom: 134px;
     right: initial;
     left: 50%;
     transform: translateX(-50%);
+    padding: 0;
     &__list {
       flex-direction: initial;
       gap: 13px;
+      padding: 5px;
     }
 
     &__item {
-      background-color: #1a1a1a;
+      width: 30px;
+      height: 30px;
     }
   }
   .opened-fullscreen {
@@ -1231,10 +1241,15 @@ button {
       position: absolute;
       bottom: 190px;
       right: 0;
+      padding: 0;
+      &::before {
+        width: 98%;
+        height: 101%;
+    }
     }
 
     &-fullscreen-button {
-      margin-top: 8px;
+      margin-top: 0;
       margin-left: 0;
     }
 

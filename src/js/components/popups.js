@@ -47,7 +47,6 @@ export function popups() {
           currentModal.classList.add("popup-show");
           document.documentElement.classList.add("popup-show");
           el.classList.add("_active");
-          gsapPopup();
 
           // console.log('222');
         }
@@ -65,7 +64,6 @@ export function popups() {
         el.classList.add("_active");
         currentModal = newModal;
         currentBtn = el;
-        gsapPopup();
       }
     });
   });
@@ -100,41 +98,150 @@ export function popups() {
     });
   });
 
-  function gsapPopup() {
+  const popupOpenGsap = document.querySelector('[data-open-popup="#popupDeveloper"]');
+  
+  popupOpenGsap.addEventListener('click', function() {
+    gsapPopupOpen();
+  });
+
+  const popupCloseGsap = gsap.utils.toArray("#popupDeveloper [data-close-popup]");
+  
+  popupCloseGsap.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      gsapPopupClose();
+    });
+  });
+
+  function gsapPopupOpen() {
     let tlPopupShow = gsap.timeline({});
+    tlPopupShow.from(".developer-popup__img", {
+      yPercent: 150,
+      duration: 0.8,
+    });
     tlPopupShow.to(".developer-popup__img", {
       scale: 1.2,
+      duration: 0.8,
     });
 
     tlPopupShow.to(".developer-popup__img-bg", {
       opacity: 0,
-    });
+      duration: 0.8,
+
+    },"<");
 
     tlPopupShow.to(".developer-popup__img-logo", {
       opacity: 0,
-    },"<");
+      duration: 0.8,
 
+    },"<");
 
     tlPopupShow.to(".developer-popup__content", {
       clipPath: "inset(0 0 0 0)",
+      delay: 0.2,
+      duration: 0.7,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__content", {
       backgroundColor: "rgba(0, 0, 0, 0.9)",
-      duration: 0.5,
-    });
+    },"<90%");
+
     tlPopupShow.to(".developer-popup__img", {
       scale: 1,
-      xPercent: -100,
-      yPercent: -40,
+      left: "0",
+      top: "0",
+      xPercent: 0,
+      yPercent: 0,
       duration: 0.5,
-    });
+    },"<20%");
 
-    tlPopupShow.to(".developer-popup__sub", {
-      opacity: 1,
-    });
-    tlPopupShow.to(".developer-popup__title", {
+    tlPopupShow.to(".developer-popup__close", {
       opacity: 1,
     },"<");
-    tlPopupShow.to(".developer-popup__odd", {
+
+    tlPopupShow.to(".developer-popup__sub h5", {
       opacity: 1,
+      yPercent: -100,
+      delay: 0.2,
+    },"<");
+    tlPopupShow.to(".developer-popup__title h3", {
+      opacity: 1,
+      yPercent: -100,
+    },"<");
+    tlPopupShow.to(".developer-popup__text p", {
+      opacity: 1,
+      yPercent: -100,
+    },"<");
+    tlPopupShow.to(".developer-popup__statis-line", {
+      width: "100%",
+    },"<");
+    tlPopupShow.to(".developer-popup__statis-item", {
+      opacity: 1,
+      yPercent: -100,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__gradient ", {
+      opacity: 1,
+    });
+  }
+  function gsapPopupClose() {
+    let tlPopupShow = gsap.timeline({});
+    tlPopupShow.from(".developer-popup__img", {
+      yPercent: 0,
+      duration: 0,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__img-bg", {
+      opacity: 1,
+      duration: 0,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__img-logo", {
+      opacity: 1,
+      duration: 0,
+
+    },"<");
+
+    tlPopupShow.to(".developer-popup__content", {
+      clipPath: "inset(15% 26% 15% 26%)",
+      backgroundColor: "rgba(0, 0, 0, 0)",
+      duration: 0,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__img", {
+      scale: 0.6,
+      left: "50%",
+      top: "35%",
+      xPercent: -50,
+      yPercent: -50,
+      duration: 0,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__close", {
+      opacity: 0,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__sub h5", {
+      opacity: 0,
+      yPercent: 100,
+    },"<");
+    tlPopupShow.to(".developer-popup__title h3", {
+      opacity: 0,
+      yPercent: 100,
+    },"<");
+    tlPopupShow.to(".developer-popup__text p", {
+      opacity: 0,
+      yPercent: 100,
+    },"<");
+    tlPopupShow.to(".developer-popup__statis-line", {
+      width: "0",
+    },"<");
+    tlPopupShow.to(".developer-popup__statis-item", {
+      opacity: 0,
+      yPercent: 100,
+    },"<");
+
+    tlPopupShow.to(".developer-popup__gradient ", {
+      opacity: 0,
     },"<");
   }
 }

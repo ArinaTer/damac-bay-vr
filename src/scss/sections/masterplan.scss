@@ -18,8 +18,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 1;
-    // transform: scale(1.5);
+    z-index: 999;
     img {
       object-fit: cover;
       object-position: center;
@@ -94,6 +93,9 @@
     bottom: 100px;
     right: 0;
     width: 200px;
+    @include lg {
+      display: none;
+    }
 
     &-item {
       display: flex;
@@ -215,9 +217,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.2);
     @include md {
-      background-color: transparent;
-      border: 0;
-      display: none;
+
+      // display: none;
       span {
         span {
           display: none;
@@ -312,8 +313,9 @@
       transform: translateY(0%) ;
     }
 
-    @include xl {
-    }
+    // @include md {
+    //   transform: translateY(-10%);
+    // }
 
     @media (max-width: 575.98px) {
       .slightly-move-x & {

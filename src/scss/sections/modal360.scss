@@ -113,9 +113,8 @@
     background-repeat: no-repeat;
     @include lg {
       position: absolute;
-      top: 13px;
-      right: 13px;
-      background-color: rgba(0, 0, 0, 0.30);
+      top: 25px;
+      right: 25px;
       width: 32px;
       height: 32px;
       padding: 10px;
@@ -162,7 +161,8 @@
       position: absolute;
       top: 13px;
       left: 13px;
-      background-color: rgba(0, 0, 0, 0.30);;
+      background-color: rgba(0, 0, 0, 0.30);
+      border-radius: 5px;
       padding: 8px 13px;
     }
     

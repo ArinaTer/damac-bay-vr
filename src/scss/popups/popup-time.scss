@@ -23,7 +23,11 @@
     &::before {
       background-color: rgb(0, 0, 0);
     }
-    @include lg {
+    @include md {
+      &::after,
+      &::before {
+        background-color: rgb(255, 255, 255);
+      }
     }
   }
 
@@ -65,6 +69,7 @@
 
     @include md {
       width: 100%;
+      border-radius: 20px 20px 0 0;
     }
 
     @include sm {
@@ -157,8 +162,12 @@
         text-align: left;
       }
       input {
-      padding: 15px 15px;
-      padding-left: 110px !important;
+        padding: 15px 15px;
+        padding-left: 110px !important;
+        @include md {
+          padding: 7px 15px;
+        }
+        
       }
     }
 
@@ -179,7 +188,9 @@
       background-color: transparent;
       border-radius: 0;
       font-size: 16px;
-
+      @include md {
+        padding: 8px 0;
+      }
       &:focus {
         border: none;
         border-bottom: 0.5px solid rgb(126, 126, 126);

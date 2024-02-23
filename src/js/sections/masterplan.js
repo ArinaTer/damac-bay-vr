@@ -8,6 +8,15 @@ export function masterplan() {
     const backtoMain = gsap.utils.toArray('[backto-main]');
     const toggleTextsIntro = gsap.utils.toArray('[data-toggle-visible]');
 
+    const video = document.querySelector('.masterplan__video');
+
+
+    if (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) {
+        video.play()
+        video.currentTime = 0;
+    }
+
+
     // const masterplanSwipeHand = document.querySelector(".masterplan__swipe-hand");
     function toMasterplan() {
         gsap.to(toggleTextsIntro, {
