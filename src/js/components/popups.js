@@ -47,16 +47,8 @@ export function popups() {
           currentModal.classList.add("popup-show");
           document.documentElement.classList.add("popup-show");
           el.classList.add("_active");
-
-          // console.log('222');
         }
       } else {
-        // if (currentModal) {
-        // 	currentModal.classList.remove('popup-show');
-        // 	currentBtn.classList.remove('_active');
-        // 	// console.log('333');
-        // }
-        // console.log('444');
         document.body.classList.add(toOpen.slice(1));
         document.body.classList.remove("open-menu");
         newModal.classList.add("popup-show");
@@ -88,7 +80,6 @@ export function popups() {
       });
 
       document.body.classList.remove(closePopup);
-      // console.log('555');
 
       // Clear the currently opened modal and button if it's the one that's being closed
       if (modalToClose === currentModal) {
@@ -98,19 +89,23 @@ export function popups() {
     });
   });
 
+  const mq = window.matchMedia("(max-width: 4000px) and (min-width: 991px)");
+
   const popupOpenGsap = document.querySelector('[data-open-popup="#popupDeveloper"]');
-  
-  popupOpenGsap.addEventListener('click', function() {
-    gsapPopupOpen();
-  });
+  if (mq.matches) {
+    popupOpenGsap.addEventListener('click', function() {
+      gsapPopupOpen();
+    });
+  }
 
   const popupCloseGsap = gsap.utils.toArray("#popupDeveloper [data-close-popup]");
-  
-  popupCloseGsap.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      gsapPopupClose();
+  if (mq.matches) {
+    popupCloseGsap.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gsapPopupClose();
+      });
     });
-  });
+  }
 
   function gsapPopupOpen() {
     let tlPopupShow = gsap.timeline({});

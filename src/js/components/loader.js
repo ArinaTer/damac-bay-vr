@@ -73,7 +73,7 @@ export function loader() {
   const stopTime = document.querySelectorAll(".stop-time");
 
   function openPoupTime() {
-
+    console.log("openPoupTime");
       if (!popupContent.classList.contains("popup-show")) {
           popupContent.classList.add("popup-show");
       }
@@ -81,21 +81,12 @@ export function loader() {
   }
 
   function updateTimeOut(el) {
+    clearTimeout(time);
       time = setTimeout(() => {
           openPoupTime();
           (el);
-      }, 5000);
+      }, 5000); 
   }
-
-  // closePopupTime.forEach((btn) => {
-  //     btn.addEventListener("click", () => {
-  //         popupContent.classList.remove("popup-show");
-  //         popupContent.classList.add("hird-hide-j");
-  //         gsapOBserver.enable();
-
-
-  //     });
-  // });
 
   stopTimer.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -108,4 +99,5 @@ export function loader() {
           clearTimeout(time);
       });
   });
+
 }

@@ -5,14 +5,14 @@ const parentWindow = window.parent;
 const matches = window.matchMedia("(max-width: 800px)").matches;
 const matcheMobile = window.matchMedia("(max-width: 1004px)").matches;
 
-const slidesItem = document.querySelectorAll(".modal-center__swiper .swiper-slide");
+const slidesItem = document.querySelectorAll(".modal-center__slider .swiper-slide");
 const slidesImg = document.querySelectorAll(".swiper-slide__img");
 const openBtns = document.querySelectorAll(".modal-btn__open");
 const closeBtns = Array.from(document.querySelectorAll(".modal-btn__close"));
 const closeBtnsFirst = parentWindow.document.querySelector(
   ".modal-btn__close-first"
 );
-const allSwipers = document.querySelectorAll(".modal-center__swiper .swiper");
+const allSwipers = document.querySelectorAll(".modal-center__slider .swiper");
 let swiperSlideTo = [];
 
 const swiperContainer = document.querySelector(".modal-center__slider");
@@ -66,15 +66,15 @@ fakeFullscrenn.addEventListener("click", ()=> {
 
 
 function toggleActiveClass(e) {
-  const target = e.target.closest(".modal-center__swiper .swiper-slide");
+  const target = e.target.closest(".modal-center__slider .swiper-slide");
 
   if (!target) return;
 
-  const swiper = target.closest(".modal-center__swiper .swiper");
+  const swiper = target.closest(".modal-center__slider .swiper");
 
   if (!swiper) return;
 
-  const slides = swiper.querySelectorAll(".modal-center__swiper .swiper-slide");
+  const slides = swiper.querySelectorAll(".modal-center__slider .swiper-slide");
 
   slides.forEach((slide) => {
     slide.classList.remove("_active");
@@ -89,7 +89,7 @@ function toggleActiveClass(e) {
 swiperContainer.addEventListener("click", toggleActiveClass);
 
 allSwipers.forEach((swiper) => {
-  const slides = swiper.querySelectorAll(".modal-center__swiper .swiper-slide");
+  const slides = swiper.querySelectorAll(".modal-center__slider .swiper-slide");
 
   slides.forEach((slide, index) => {
     slide.classList.remove("_active");
@@ -102,7 +102,7 @@ allSwipers.forEach((swiper) => {
 
 
 allSwipers.forEach((swiperContainer) => {
-  const slidesLength = swiperContainer.querySelectorAll(".modal-center__swiper .swiper-slide").length;
+  const slidesLength = swiperContainer.querySelectorAll(".modal-center__slider .swiper-slide").length;
 
   const swiperInstance = new Swiper(swiperContainer, {
     slidesPerView:
@@ -150,7 +150,7 @@ allSwipers.forEach((swiperContainer) => {
 
   if (matcheMobile) {
     allSwipers.forEach(function (swiper) {
-      const slidesLength = swiper.querySelectorAll(".modal-center__swiper .swiper-slide").length;
+      const slidesLength = swiper.querySelectorAll(".modal-center__slider .swiper-slide").length;
   
       if (slidesLength === 1) {
         swiper.style.width = "80px";
@@ -162,7 +162,7 @@ allSwipers.forEach((swiperContainer) => {
     });
   } else {
     allSwipers.forEach(function (swiper) {
-      const slidesLength = swiper.querySelectorAll(".modal-center__swiper .swiper-slide").length;
+      const slidesLength = swiper.querySelectorAll(".modal-center__slider .swiper-slide").length;
   
       if (slidesLength === 1) {
         swiper.style.width = "85px";

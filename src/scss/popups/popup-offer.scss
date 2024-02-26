@@ -1,6 +1,5 @@
 .offer-popup {
   padding: 40px;
-  
 
   @include md {
     padding: 20px;
@@ -18,9 +17,13 @@
     @include lg {
     }
     @include md {
-
+      max-width: 80%;
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
     }
     @include sm {
+      max-width: 100%;
     }
   }
 
@@ -29,11 +32,7 @@
     opacity: 0;
     transition: opacity 0.5s;
     transition-delay: 0s;
-    @include md {
-      top: 30px;
-      right: 10px;
-      opacity: 1;
-    }
+
   }
 
   &__container {
@@ -47,9 +46,9 @@
     @include md {
       flex-direction: column;
       justify-content: center;
+      gap: 19px;
     }
   }
-
 
   &__even {
     position: relative;
@@ -63,18 +62,15 @@
     @include lg {
     }
     @include md {
-
+      max-width: 100%;
+      transition: all 0.5s;
+      transition-delay: 0s;
+      z-index: 2;
     }
 
     &-img {
       width: 100%;
       height: 100%;
-      @include lg {
-      }
-      @include md {
-      }
-      @include sm {
-      }
 
       img {
         width: 100%;
@@ -100,14 +96,28 @@
         width: 100%;
         height: 145px;
         // background-image: url("../img/specialOffer/bg.svg");
-        backdrop-filter: blur(14px);
-        --webkit-backdrop-filter: blur(14px);
+        // backdrop-filter: blur(14px);
+        // --webkit-backdrop-filter: blur(14px);
         transform: translateY(90%);
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
         transition: transform 0.5s;
         transition-delay: 0s;
 
         @include md {
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: initial;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 24.41%,
+            rgba(0, 0, 0, 0.92) 88.56%
+          );
         }
       }
 
@@ -127,7 +137,24 @@
         opacity: 0;
         transition: all 0.5s;
         transition-delay: 0s;
+        @include md {
+          display: none;
+        }
       }
+    }
+  }
+
+  &__img-desctop {
+    display: block;
+    @include md {
+      display: none;
+    }
+  }
+
+  &__img-mobile {
+    display: none;
+    @include md {
+      display: block;
     }
   }
 
@@ -138,18 +165,12 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    // transition: opacity 0.8s;
-    // transition-delay: 0s;
     @include lg {
       width: 80%;
     }
     @include md {
-      opacity: 1;
-      transform: initial;
-      background-color: #000;
-      margin-top: -60px;
-      padding: 0 35px;
       width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -157,6 +178,9 @@
     background-color: #000;
     padding: 98px 50px;
     border-radius: 20px;
+    @include md {
+      display: none;
+    }
   }
 
   &__title {
@@ -181,6 +205,29 @@
     @include sm {
       padding-bottom: 10px;
     }
+
+    &-mobile {
+      display: none;
+      position: absolute;
+      bottom: 77px;
+      left: 35px;
+      z-index: 2;
+      @include md {
+        display: block;
+      }
+      @media (max-width: 380px) {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+      }
+    }
+    &-desctop {
+      display: block;
+      @include md {
+        display: none;
+      }
+    }
   }
 
   &__bottom {
@@ -195,6 +242,48 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include md {
+      height: 100%;
+      background-color: #000;
+      height: 0;
+      opacity: 0;
+      transition: all 0.5s;
+      transition-delay: 0s;
+      position: relative;
+      padding: 0 35px;
+      z-index: 1;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.9);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      transform: translateY(-100%);
+      z-index: 1;
+    }
+    
+    &::before {
+      @include md {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        padding: 1px;
+        background: linear-gradient(
+          90.05deg,
+          #9797976b 0%,
+          rgba(151, 151, 151, 0) 45%,
+          #97979773 100%
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+    }
   }
 
   &__text {
@@ -207,10 +296,30 @@
       @media (min-width: 1920px) {
         font-size: 16px;
       }
+      @include md {
+        color: #fff;
+        width: 90%;
+      }
     }
 
     @include md {
       padding-bottom: 0;
+      position: absolute;
+      bottom: 38px;
+      left: 35px;
+    }
+
+    &-desctop {
+      display: block;
+      @include md {
+        display: none;
+      }
+    }
+    &-mobile {
+      display: none;
+      @include md {
+        display: block;
+      }
     }
   }
 
@@ -218,6 +327,9 @@
     opacity: 0;
     transition: opacity 0.5s;
     transition-delay: 0s;
+    @include md {
+      opacity: 1;
+    }
     &-input {
       margin-bottom: 15px;
       input {
@@ -276,7 +388,11 @@
 
     &-btn {
       background: linear-gradient(0deg, #000000, #000000),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.17) 0%, rgba(255, 255, 255, 0) 100%);      
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.17) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
       padding: 6px 20px;
       display: flex;
       align-items: center;
@@ -289,6 +405,7 @@
 
       @include md {
         margin: 35px auto 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), #FFFFFF;
       }
 
       span {
@@ -298,11 +415,14 @@
         line-height: 16px;
         letter-spacing: 0.694px;
         text-transform: uppercase;
+        @include md {
+          color: #000;
+        }
       }
     }
 
     @include md {
-      padding: 20px 0;
+      padding: 30px 0;
     }
     // @include sm {
     //   padding: 30px 0;
@@ -318,23 +438,42 @@
   .offer-popup__even {
     height: 100%;
     transition-delay: 0.5s;
+    @include md {
+      transition-delay: 0.3s;
+      height: initial;
+    }
     &-img {
       &::after {
         transform: translateY(0);
         transition-delay: 0.6s;
+        @include md {
+          transform: initial;
+          transition-delay: initial;
+        }
       }
-  
+
       &::before {
         opacity: 1;
         transition-delay: 0.8s;
+        @include md {
+          display: none;
+        }
       }
     }
 
   }
-
   .offer-popup__bottom {
     height: 388px;
     transition-delay: 0.5s;
+    @include md {
+      opacity: 1;
+      height: 100%;
+      transition-delay: 0.4s;
+      transform: translateY(0%);
+    }
+    @include sm {
+      height: auto;
+    }
   }
 
   .offer-popup__form {

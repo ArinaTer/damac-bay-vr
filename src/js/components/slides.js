@@ -20,6 +20,7 @@ export function slides() {
             observer: true,
             observeParents: true,
             slidesPerView: 3,
+            
             breakpoints: {
                 300: {
                     slidesPerView: 1,

@@ -137,7 +137,7 @@
     align-items: center;
     justify-content: center;
     background: #f3f2ef;
-    gap: 25px;
+    // gap: 25px;
 
     @include lg {
       gap: 24px;
@@ -157,6 +157,7 @@
   // .time-popup__form-input
   &__form-input {
     width: 100%;
+    margin-bottom: 25px;
     .iti {
       .form-control {
         text-align: left;
@@ -169,6 +170,10 @@
         }
         
       }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 0;
     }
 
     .iti__selected-dial-code {

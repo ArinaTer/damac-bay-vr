@@ -66,7 +66,7 @@
     }
     @include md {
       max-height: 80vh;
-      overflow: scroll;
+      // overflow: scroll;
     }
 
     &::-webkit-scrollbar {
@@ -128,7 +128,7 @@
   @include md {
     padding: 50px 0;
     margin-top: 0;
-    height: 100%;
+    // height: 100%;
   }
 
   .paymentSwiper {
@@ -158,9 +158,9 @@
       transform: translateY(100%);
       transition: transform 0.5s;
       transition-delay: 0s;
-      @include lg {
-        transform: initial;
-      }
+      // @include lg {
+      //   transform: initial;
+      // }
     }
 
     &:nth-child(1),
@@ -239,13 +239,12 @@
     height: 280px;
     transition-delay: 0.2s;
     @include md {
-      height: 100%;
-      transition-delay: initial;
+      height: 240px;
     }
     &-slide-body {
       transform: translateY(0);
       @include md {
-        transform: initial;
+        transform: translateY(0);
       }
     }
   }
