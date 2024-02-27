@@ -21,7 +21,6 @@ closeBtns.push(...closeBtnsFirst);
 const slidesLength = slidesItem.length;
 
 const isIpade = window.matchMedia("(max-width:1170px)").matches;
-isIpade;
 
 const modal360Active = parentWindow.document.querySelector(".modal360");
 
@@ -32,7 +31,7 @@ const viewer = new PhotoSphereViewer.Viewer({
   container: document.querySelector("#viewer"),
   panorama: slidesImg[0].getAttribute("data-src"),
   defaultZoomLvl: 0,
-  navbar: ["zoom", "fullscreen"],
+  navbar: [!isIpade ? "zoom" : '', "fullscreen"],
   // navbar: ["zoom", !isIpade ? "" : "fullscreen"],
   minFov: 60,
   posePitch: 2,
@@ -45,23 +44,23 @@ const viewer = new PhotoSphereViewer.Viewer({
 
 viewer.addEventListener('fullscreen', ({ data }) => {
   document.documentElement.classList.toggle('opened-fullscreen');
-  modal360Active.classList.toggle("modal360-fullscreen")
+  modal360Active.classList.toggle("modal360-fullscreen");
 
-  if(document.body.classList.contains("active-popaps")){
-    modal360Active.classList.toggle("modal360-active")
+  if (document.body.classList.contains("active-popaps")) {
+    modal360Active.classList.toggle("modal360-active");
   }
 
 });
 
 viewer.addEventListener('ready', (e) => {
   setCopyRightTo('.psv-container', true);
-  document.body.classList.add("active-modal")
+  document.body.classList.add("active-modal");
 }, { once: true });
 
 const fakeFullscrenn = document.querySelector(".btn-fake");
 
-fakeFullscrenn.addEventListener("click", ()=> {
-  document.body.classList.toggle("fake-fullscreen")
+fakeFullscrenn.addEventListener("click", () => {
+  document.body.classList.toggle("fake-fullscreen");
 });
 
 
@@ -109,12 +108,12 @@ allSwipers.forEach((swiperContainer) => {
       slidesLength === 1
         ? 1
         : slidesLength === 2
-        ? 2
-        : slidesLength === 3
-        ? 3
-        : slidesLength === 4
-        ? 4
-        : 5,
+          ? 2
+          : slidesLength === 3
+            ? 3
+            : slidesLength === 4
+              ? 4
+              : 5,
     spaceBetween: 3,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -126,22 +125,22 @@ allSwipers.forEach((swiperContainer) => {
           slidesLength === 1
             ? 1
             : slidesLength === 2
-            ? 2
-            : slidesLength === 3
-            ? 3
-            : 3,
+              ? 2
+              : slidesLength === 3
+                ? 3
+                : 3,
       },
       1004: {
         slidesPerView:
           slidesLength === 1
             ? 1
             : slidesLength === 2
-            ? 2
-            : slidesLength === 3
-            ? 3
-            : slidesLength === 4
-            ? 4
-            : 5,
+              ? 2
+              : slidesLength === 3
+                ? 3
+                : slidesLength === 4
+                  ? 4
+                  : 5,
       },
     },
   });
@@ -151,7 +150,7 @@ allSwipers.forEach((swiperContainer) => {
   if (matcheMobile) {
     allSwipers.forEach(function (swiper) {
       const slidesLength = swiper.querySelectorAll(".modal-center__slider .swiper-slide").length;
-  
+
       if (slidesLength === 1) {
         swiper.style.width = "80px";
       } else if (slidesLength >= 2 && slidesLength <= 4) {
@@ -163,7 +162,7 @@ allSwipers.forEach((swiperContainer) => {
   } else {
     allSwipers.forEach(function (swiper) {
       const slidesLength = swiper.querySelectorAll(".modal-center__slider .swiper-slide").length;
-  
+
       if (slidesLength === 1) {
         swiper.style.width = "85px";
       } else if (slidesLength >= 2 && slidesLength < 5) {
@@ -230,7 +229,7 @@ function closePopup() {
   openBtns.forEach((openBtn) => {
     openBtn.classList.remove("active");
     document.body.classList.remove("active-popaps");
-    
+
     parentWindow.document
       .querySelector(".modal360")
       .classList.remove("modal360-active");
