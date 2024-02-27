@@ -35,10 +35,10 @@
 
   // masterplan__btns
   &__btns {
-    position: fixed;
-    bottom: 0;
-    left: 5%;
-    z-index: 1122;
+    // position: fixed;
+    // bottom: 0;
+    // left: 5%;
+    // z-index: 1122;
     padding-bottom: 30px;
     width: 90%;
     opacity: 0;
@@ -89,12 +89,21 @@
     gap: 20px;
     align-items: center;
     padding: 28px 34px;
+    width: 200px;
     position: absolute;
     bottom: 100px;
-    right: 0;
-    width: 200px;
+    right: 65px;
+    z-index: 1122;
+    opacity: 0;
+    visibility: hidden;
     @include lg {
       display: none;
+    }
+
+    ._show & {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s ease 0s;
     }
 
     &-item {
@@ -170,20 +179,30 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    position: relative;
+    // position: relative;
     padding: 10px 20px;
     z-index: 3;
-    position: fixed;
-    top: 100px;
+    position: absolute;
+    top: 118px;
     left: 5%;
     width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1122;
+
+
+    ._show & {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s ease 0s;
+    }
+
 
     @include md {
-      position: static;
-      font-size: 14px;
-      width: auto;
-      padding: 12px 20px;
-      gap: 16px;
+      top: initial;
+      bottom: 24px;
+      left: 36px;
+      padding: 11px 20px;
       svg {
         width: 20px;
       }
@@ -204,6 +223,18 @@
     padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    bottom: 26px;
+    right: 65px;
+    z-index: 1122;
+    opacity: 0;
+    visibility: hidden;
+
+    ._show & {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s ease 0s;
+    }
 
     @include md {
       background-color: transparent;
@@ -244,8 +275,22 @@
     padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    @include md {
+    position: absolute;
+    bottom: 26px;
+    left: 65px;
+    z-index: 1122;
+    opacity: 0;
+    visibility: hidden;
 
+    ._show & {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s ease 0s;
+    }
+
+    @include md {
+      left: initial;
+      right: 36px;
       // display: none;
       span {
         span {

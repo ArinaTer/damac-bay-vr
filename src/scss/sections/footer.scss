@@ -68,7 +68,8 @@
       margin-top: 0;
     }
     @include sm {
-      padding-bottom: 40px;
+      padding-bottom: 0;
+      padding-top: 40px;
     }
     
   }
@@ -88,40 +89,15 @@
     }
   }
 
-  // .footer__top
-  &__top {
-    margin-bottom: 20px;
-    margin-left: 75px;
-    align-self: flex-start;
-    @include md {
-      margin-left: 0;
-    }
-    @media (max-width: 380px) {
-      margin-bottom: 15px;
-    }
-    &-desctop {
-      display: block;
-      @include md {
-        display: none;
-      }
-    }
-
-    &-mobile {
-      display: none;
-      @include md {
-        display: block;
-      }
-    }
-  }
-
   // .footer__sub
   &__sub {
     font-size: 24px;
     line-height: 1.2;
     text-align: left;
     text-transform: uppercase;
-    color: #808080;
+    color: #ADA08C;
     font-weight: 400;
+    padding-bottom: 24px;
     @include md {
       font-size: 16px;
       color: #ADA08C;
@@ -140,8 +116,8 @@
     max-width: 722px;
     width: 100%;
     padding-bottom: 45px;
-    @media (max-width: 1600px) and (max-height: 650px) {
-      font-size: 62px;
+    @media (max-width: 1440px) and (max-height: 800px) {
+      font-size: 60px;
     }
 
     @include xl {
@@ -226,7 +202,10 @@
     @media (max-width: 380px) {
       padding: 20px 28px;
     }
-
+    @media (max-width: 1440px) and (max-height: 800px) {
+      margin-bottom: 20px;
+      padding: 30px 50px;
+    }
     &::after {
       content: "";
       background-image: url("../img/icons/gradient.png");
@@ -239,6 +218,9 @@
       height: 724px;
       transform: translateX(-50%);
       pointer-events: none;
+      @include sm {
+        display: none;
+      }
     }
 
     &::before {
@@ -406,10 +388,11 @@
 
   // .footer__bottom
   &__bottom {
-    margin-bottom: 30px;
+    margin-bottom: 18px;
     @include xl {
       margin-bottom: 0;
     }
+
     // // margin-top: 135px;
     // padding-bottom: 40px;
     // @media (max-width: 1600px) and (max-height: 850px) {

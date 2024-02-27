@@ -135,7 +135,8 @@
     span {
       font-size: 32px;
       line-height: 100%;
-      @include rubikExtraBold;
+      // @include rubikExtraBold;
+      font-weight: 600;
       color: #fff;
       position: relative;
 

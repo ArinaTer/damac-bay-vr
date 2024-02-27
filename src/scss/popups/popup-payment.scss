@@ -68,7 +68,9 @@
       max-height: 80vh;
       // overflow: scroll;
     }
-
+    @include sm {
+      background-color: #000;
+    }
     &::-webkit-scrollbar {
       display: none;
     }
