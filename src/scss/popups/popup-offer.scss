@@ -338,7 +338,7 @@
         width: 100%;
         padding: 10px 0 8px;
         background-color: transparent;
-        color: #fff;
+        color: #000;
         border-radius: 0;
         font-size: 14px;
 
@@ -365,7 +365,7 @@
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus {
           transition: background-color 5000s ease-in-out 0s;
-          -webkit-text-fill-color: #fff !important;
+          -webkit-text-fill-color: #000 !important;
         }
       }
 

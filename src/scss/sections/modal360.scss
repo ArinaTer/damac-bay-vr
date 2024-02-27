@@ -66,6 +66,7 @@
     pointer-events: auto;
     background-color: #000;
     transition: all 0.4s;
+    border-radius: 20px;
 
     &::after {
       content: "LOADING...";
@@ -174,6 +175,9 @@
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
+      @include md {
+        font-size: 14px;
+      }
 
       @include sm {
         opacity: 1;

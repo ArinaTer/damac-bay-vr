@@ -122,6 +122,7 @@ export function masterplan() {
 
 
     handleResize();
+    window.addEventListener("resize", handleResize);
 
 
     // Modal 360

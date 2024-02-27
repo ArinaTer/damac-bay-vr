@@ -186,7 +186,7 @@ button {
   right: -150px;
   display: flex;
   gap: 2px;
-  height: 50px;
+  height: 63px;
 }
 .modal-center__btn {
   color: #fff;
@@ -554,6 +554,7 @@ button {
   background-color: transparent;
   border-radius: 0;
   line-height: 24px;
+  color: #fff;
 }
 .info__form-input input:focus {
   border: none;
@@ -594,7 +595,7 @@ button {
 .info__form-input input:-webkit-autofill, .info__form-input input:-webkit-autofill:hover, .info__form-input input:-webkit-autofill:focus {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #000 !important;
+  -webkit-text-fill-color: #fff !important;
 }
 .info__form-input .iti .form-control {
   text-align: left;
@@ -608,7 +609,8 @@ button {
   margin-bottom: 0;
 }
 .info__form-btn {
-  background-color: #ada08c;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(272.73deg, rgba(255, 255, 255, 0.5) -0.15%, rgba(223, 223, 223, 0.5) 45.81%), #FFFFFF;
+  border-radius: 5px;
   padding: 16px 0;
   display: flex;
   align-items: center;
@@ -619,8 +621,8 @@ button {
 }
 .info__form-btn span {
   color: #000;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 150%;
   text-transform: uppercase;
   overflow: hidden;

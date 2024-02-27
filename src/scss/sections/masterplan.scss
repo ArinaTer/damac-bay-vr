@@ -202,6 +202,8 @@
   &__btn-brochure {
     width: 200px;
     padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
     @include md {
       background-color: transparent;
@@ -212,6 +214,27 @@
           display: none;
         }
       }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 5px;
+      padding: 1px;
+      background: linear-gradient(
+        89.95deg,
+        #cecece 0.08%,
+        rgba(206, 206, 206, 0) 72.36%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
     }
   }
 
@@ -413,7 +436,7 @@
   .dot-masterplan__text {
     color: #efefef;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.1;
     line-height: 100%;
     @media (min-width: 1600px) {

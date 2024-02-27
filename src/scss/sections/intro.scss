@@ -81,8 +81,8 @@
   &__top {
     width: 100%;
     display: flex;
-    gap: 119px;
-    justify-content: space-between;
+    gap: 57px;
+    justify-content: center;
     align-items: center;
     margin-bottom: 25px;
     @include xl {
@@ -113,6 +113,17 @@
         height: 100%;
         object-fit: cover;
       }
+    }
+  }
+
+  &__logo {
+    height: 149px;
+    width: 292px;
+    margin-bottom: 17px;
+    @include lg {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 0;
     }
   }
 
@@ -396,6 +407,7 @@
       font-size: 16px;
       line-height: 100%;
       color: #fff;
+      text-transform: uppercase;
     }
   }
 
