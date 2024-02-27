@@ -55,6 +55,9 @@
       scale: 1;
       clip-path: inset(0 0 0 0);
     }
+    // @include sm {
+    //   height: 315px;
+    // }
     &::before {
       content: "";
       position: absolute;
@@ -63,8 +66,15 @@
       width: 100%;
       height: 100%;
       // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 28.41%, rgba(0, 0, 0, 0.92) 88.56%);
-      background: linear-gradient(177.87deg, rgba(0, 0, 0, 0) 12.07%, rgba(0, 0, 0, 0.67) 80.26%);
+      background: linear-gradient(
+        177.87deg,
+        rgba(0, 0, 0, 0) 12.07%,
+        rgba(0, 0, 0, 0.67) 80.26%
+      );
       z-index: 1;
+      @include md {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 28.41%, rgba(0, 0, 0, 0.92) 88.56%);
+      }
     }
 
     @include sm {
@@ -84,6 +94,11 @@
     @include md {
       display: block;
     }
+    // img {
+    //   width: auto;
+    //   height: auto;
+    //   object-fit: contain;
+    // }
   }
 
   &__img {
@@ -95,7 +110,6 @@
       object-fit: cover;
       object-position: bottom;
     }
-
   }
 
   // .brochure-popup__bottom
@@ -294,14 +308,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+      background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.17) 100%
+        ),
+        linear-gradient(0deg, #ffffff, #ffffff);
       padding: 6px 10px;
       width: 228px;
       height: 100%;
       border-radius: 5px;
       transition: all 0.5s;
-
-
 
       img {
         width: 0;
@@ -311,7 +328,6 @@
       }
 
       &:hover {
-
         img {
           transform: translateX(10px);
           width: 23px;
@@ -335,7 +351,6 @@
     }
   }
 }
-
 
 .brochure-popup.popup-show {
   .brochure-popup__top {
