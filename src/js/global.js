@@ -1,5 +1,5 @@
+import { header } from "./components/header.js";
 export function global() {
-
     const menuLockScroll = document.querySelector(".header__menu-btn");
     // Observer Scroll
     const intro = document.querySelector(".intro");
@@ -11,6 +11,7 @@ export function global() {
     const tl = gsap.timeline({});
     let scrollTop = true;
     let scrollDown = false;
+    
 
     function openText() {
         tl.to(footerBlocks, {
@@ -143,5 +144,7 @@ export function global() {
             }
         })
     })
+
+    header(gsapOBserver);
 
 }

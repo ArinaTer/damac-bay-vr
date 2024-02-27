@@ -222,7 +222,6 @@ function closePopup() {
     modal.classList.remove("active");
     document.body.classList.remove("active-popaps");
 
-
     parentWindow.document
       .querySelector(".modal360")
       .classList.remove("modal360-active");
