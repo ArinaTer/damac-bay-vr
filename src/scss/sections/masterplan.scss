@@ -349,7 +349,7 @@
     -o-object-fit: cover;
     object-fit: cover;
     left: 0;
-    z-index: 3;
+    z-index: 1123;
     opacity: 0;
     transition: 0.4s ease;
 
@@ -607,7 +607,7 @@
       animation: handShake 5s linear forwards infinite;
     }
 
-    @include xxl {
+    @include xl {
       display: flex;
     }
 

@@ -9,15 +9,15 @@ const slidesItem = document.querySelectorAll(".modal-center__slider .swiper-slid
 const slidesImg = document.querySelectorAll(".swiper-slide__img");
 const openBtns = document.querySelectorAll(".modal-btn__open");
 const closeBtns = Array.from(document.querySelectorAll(".modal-btn__close"));
-const closeBtnsFirst = parentWindow.document.querySelector(
-  ".modal-btn__close-first"
+const closeBtnsFirst = document.querySelectorAll(
+  ".modals360__btn-arrow"
 );
 const allSwipers = document.querySelectorAll(".modal-center__slider .swiper");
 let swiperSlideTo = [];
 
 const swiperContainer = document.querySelector(".modal-center__slider");
 
-closeBtns.push(closeBtnsFirst);
+closeBtns.push(...closeBtnsFirst);
 const slidesLength = slidesItem.length;
 
 const isIpade = window.matchMedia("(max-width:1170px)").matches;
@@ -214,7 +214,7 @@ closeBtns.forEach((closeBtn, i) => {
     e.stopPropagation();
     closePopup();
   });
-  closeBtnsFirst[i];
+
 });
 function closePopup() {
   const activeModals = document.querySelectorAll(".modal.active");

@@ -358,7 +358,6 @@ button {
 .modal-center__slider .swiper .swiper-slide {
   cursor: pointer;
   overflow: hidden;
-  height: 51px;
 }
 .modal-center__slider .swiper .swiper-slide._active .swiper-slide__img::after {
   content: "";
@@ -451,6 +450,32 @@ button {
   top: 0;
   right: 0;
   cursor: pointer;
+}
+.info .modals360__btn-arrow {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  z-index: 10;
+  cursor: pointer;
+}
+.info .modals360__btn-arrow::before, .info .modals360__btn-arrow::after {
+  content: "";
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.info .modals360__btn-arrow::before {
+  top: calc(50% - 1px);
+  transform: rotate(-45deg);
+}
+.info .modals360__btn-arrow::after {
+  bottom: calc(50% - 1px);
+  transform: rotate(45deg);
 }
 .info__container {
   padding: 30px;
@@ -637,6 +662,32 @@ button {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+.floorplan .modals360__btn-arrow {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  z-index: 10;
+  cursor: pointer;
+}
+.floorplan .modals360__btn-arrow::before, .floorplan .modals360__btn-arrow::after {
+  content: "";
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+.floorplan .modals360__btn-arrow::before {
+  top: calc(50% - 1px);
+  transform: rotate(-45deg);
+}
+.floorplan .modals360__btn-arrow::after {
+  bottom: calc(50% - 1px);
+  transform: rotate(45deg);
 }
 .floorplan__container {
   padding: 40px 0;
@@ -1033,6 +1084,9 @@ button {
     align-items: center;
     gap: 15px;
   }
+  .modal-center .swiper-slide {
+    height: 51px;
+  }
   .modal-center__slider {
     justify-content: center;
     max-width: 320px;
@@ -1153,7 +1207,11 @@ button {
   }
   .info {
     width: auto;
-    background: #EEECE6;
+    background: #eeece6;
+  }
+  .info .modals360__btn-arrow::before, .info .modals360__btn-arrow::after {
+    content: "";
+    background-color: #000;
   }
   .info .info__container {
     padding: 0;
@@ -1163,7 +1221,7 @@ button {
   }
   .info .info__top {
     padding-bottom: 30px;
-    background-color: #EEECE6;
+    background-color: #eeece6;
     padding: 50px 15px;
   }
   .info .info__bottom {

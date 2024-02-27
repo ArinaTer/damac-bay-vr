@@ -87,7 +87,7 @@
   // .modal360__close-btn
   &__close-btn {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     gap: 20px;
     position: absolute;
@@ -171,7 +171,7 @@
       line-height: 1;
       text-align: center;
       color: #fff;
-      font-size: 13px;
+      font-size: 18px;
       font-style: normal;
       font-weight: 400;
 
@@ -197,19 +197,19 @@
   }
 }
 
-// .close__modal-btn {
-//   .modal360 {
-//     .modal-btn__close-first {
-//       opacity: 0;
-//       cursor: auto;
-//     }
-//     .modal360__close-btn {
-//         opacity: 0;
-//         pointer-events: none;
-//     }
+.close__modal-btn {
+  .modal360 {
+    .modal-btn__close-first {
+      opacity: 0;
+      cursor: auto;
+    }
+    .modal360__close-btn {
+        opacity: 0;
+        pointer-events: none;
+    }
 
-//   }
-// }
+  }
+}
 
 .open-popup__floor {
   .modal360 {
