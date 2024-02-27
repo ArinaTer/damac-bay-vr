@@ -974,7 +974,7 @@ body::-webkit-scrollbar {
   background-color: rgba(230, 230, 230, 0.3019607843);
 }
 
-.header__nav-btn:focus {
+.header__nav-btn._active {
   background-color: #fff;
   color: #000;
 }
