@@ -1224,17 +1224,17 @@ button {
   .info .info__top {
     padding-bottom: 30px;
     background-color: #eeece6;
-    padding: 50px 15px;
+    padding: 69px 24px;
   }
   .info .info__bottom {
     border-radius: 20px 20px 0 0;
     overflow: hidden;
   }
   .info .info__subtitle {
-    color: #000;
+    color: #635D58;
   }
   .info .info__title {
-    color: #000;
+    color: #2E2A25;
   }
   .info .info__text p {
     color: #000;
@@ -1360,7 +1360,7 @@ button {
     height: 100%;
   }
   .info__top {
-    padding: 0 15px;
+    padding: 69px 24px;
     height: 40%;
   }
   .info__bottom {
@@ -1369,6 +1369,8 @@ button {
   .info__subtitle {
     font-size: 16px;
     padding-bottom: 15px;
+    color: #635D58;
+    line-height: 30px;
   }
   .info__title {
     font-size: 32px;

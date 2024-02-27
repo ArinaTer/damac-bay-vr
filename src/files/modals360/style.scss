@@ -1418,7 +1418,7 @@ button {
     .info__top {
       padding-bottom: 30px;
       background-color: #eeece6;
-      padding: 50px 15px;
+      padding: 69px 24px;
     }
     .info__bottom {
       border-radius: 20px 20px 0 0;
@@ -1426,10 +1426,12 @@ button {
     }
 
     .info__subtitle {
-      color: #000;
+      color: #635D58;
+      
     }
     .info__title {
-      color: #000;
+      color:#2E2A25;
+      
     }
 
     .info__text p {
@@ -1584,7 +1586,7 @@ button {
     }
 
     &__top {
-      padding: 0 15px;
+      padding: 69px 24px;
       // padding-bottom: 80px;
       height: 40%;
     }
@@ -1596,6 +1598,8 @@ button {
     &__subtitle {
       font-size: 16px;
       padding-bottom: 15px;
+      color: #635D58;
+      line-height: 30px;
     }
 
     &__title {
