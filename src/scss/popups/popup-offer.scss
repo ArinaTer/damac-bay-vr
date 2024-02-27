@@ -341,12 +341,18 @@
         color: #000;
         border-radius: 0;
         font-size: 14px;
+        @include md {
+          color: #FFF;
+        }
 
         &:focus {
           border: none;
           border-bottom: 0.5px solid #000;
           box-shadow: none;
           outline: none;
+          @include md {
+          border-bottom: 0.5px solid #FFF;
+          }
 
           &::placeholder {
             opacity: 0;
@@ -366,6 +372,10 @@
         &:-webkit-autofill:focus {
           transition: background-color 5000s ease-in-out 0s;
           -webkit-text-fill-color: #000 !important;
+          @include md {
+          -webkit-text-fill-color: #fff !important;
+
+          }
         }
       }
 
