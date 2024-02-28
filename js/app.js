@@ -30847,6 +30847,9 @@ window.windowHeight = window.innerHeight;
 window.mm = gsap.matchMedia();
 window.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
+document.addEventListener('contextmenu', (e)=> {
+    e.preventDefault();
+});
 // Fancybox.defaults.Hash = false;
 
 

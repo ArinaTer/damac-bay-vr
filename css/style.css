@@ -1470,6 +1470,37 @@ body::-webkit-scrollbar {
   z-index: 8;
 }
 
+.intro__qrcode {
+  position: absolute;
+  bottom: 37px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 6;
+  width: 100%;
+  max-width: 90%;
+  height: 100px;
+  pointer-events: none;
+}
+
+.intro__qrcode img {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hidden .intro__qrcode {
+  opacity: 0 !important;
+  visibility: hidden;
+  -webkit-transform: all 1s;
+      -ms-transform: all 1s;
+          transform: all 1s;
+}
+
 .intro__bg {
   position: absolute;
   top: 0;
@@ -1815,8 +1846,8 @@ body::-webkit-scrollbar {
 .intro__scrollto-arrow {
   display: block;
   margin: 10px auto;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-top: 2px solid #fff;
   border-left: 2px solid #fff;
   -webkit-transform: rotate(225deg);
@@ -2160,7 +2191,7 @@ body::-webkit-scrollbar {
   position: fixed;
   display: block;
   bottom: 0;
-  height: 30vh;
+  height: 20vh;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
   background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
@@ -5479,6 +5510,15 @@ body::-webkit-scrollbar {
     max-width: 95%;
   }
 
+  .intro__qrcode {
+    height: 50px;
+  }
+
+  .intro__qrcode img {
+    width: 50px;
+    height: 50px;
+  }
+
   .intro__bg::after {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(-8.29%, #000), color-stop(54.03%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, left top, left bottom, color-stop(-63.63%, rgba(0, 0, 0, 0)), to(#000));
     background: linear-gradient(180deg, #000 -8.29%, rgba(0, 0, 0, 0) 54.03%), linear-gradient(180deg, rgba(0, 0, 0, 0) -63.63%, #000 100%);
@@ -5542,7 +5582,6 @@ body::-webkit-scrollbar {
   }
 
   .intro__scrollto {
-    bottom: 30px;
     z-index: 10;
   }
 
