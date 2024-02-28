@@ -289,9 +289,13 @@
       }
     }
     img {
-      width: 100%;
-      height: 100%;
+      width: 456px;
+      height: 342px;
       object-fit: cover;
+      @include lg {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 

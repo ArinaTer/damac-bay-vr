@@ -75,7 +75,6 @@ button {
   height: auto;
   bottom: 24px;
   left: 35px;
-  padding: 2px 15px;
   gap: 10px;
   opacity: 0;
   transition: all 0.3s;
@@ -98,21 +97,6 @@ button {
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   pointer-events: none;
-}
-@media (max-width: 1170px) {
-	.psv-navbar {
-		padding: 0;
-	}
-	.psv-navbar::before {
-		display: none;
-	}
-	.psv-fullscreen-button {
-		background-color: rgba(0, 0, 0, 0.68);
-		border-radius: 5px;
-	}
-	.psv-fullscreen-button.psv-button--active {
-		background-color: rgba(255, 255, 255, 0.2);
-	}
 }
 .psv-navbar .psv-button--active {
   border-radius: 5px;
@@ -1084,8 +1068,8 @@ button {
 }
 @media (max-width: 845px) {
   .btn-fake {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     left: 15px;
     bottom: 190px;
