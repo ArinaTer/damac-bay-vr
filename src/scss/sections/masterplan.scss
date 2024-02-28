@@ -96,6 +96,11 @@
       display: none;
     }
 
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
     ._show & {
       opacity: 1;
       visibility: visible;
