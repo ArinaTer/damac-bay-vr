@@ -1200,6 +1200,9 @@ button {
     align-items: center;
     gap: 0;
   }
+  .floorplan .floorplan__btn-close {
+    opacity: 0;
+  }
   .floorplan .floorplan__top {
     padding: 30px 24px;
   }
@@ -1252,6 +1255,9 @@ button {
   .info .modals360__btn-arrow::before, .info .modals360__btn-arrow::after {
     content: "";
     background-color: #000;
+  }
+  .info .info__btn-close {
+    opacity: 0;
   }
   .info .info__container {
     padding: 0;

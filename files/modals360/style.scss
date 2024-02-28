@@ -1407,6 +1407,9 @@ button {
       align-items: center;
       gap: 0;
     }
+    .floorplan__btn-close {
+      opacity: 0;
+    }
     .floorplan__top {
       padding: 30px 24px;
     }
@@ -1448,6 +1451,7 @@ button {
   .modal360__close-btn {
     opacity: 0;
   }
+
   .info {
     width: auto;
     background: #eeece6;
@@ -1457,6 +1461,9 @@ button {
         content: "";
         background-color: #000;
       }
+    }
+    .info__btn-close {
+      opacity: 0;
     }
     .info__container {
       padding: 0;

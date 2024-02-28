@@ -1988,6 +1988,12 @@ body::-webkit-scrollbar {
 .masterplan__list::after {
   content: "";
   position: absolute;
+  bottom: -90px;
+  left: -135px;
+  width: 269px;
+  height: 269px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
 }
 
 ._show .masterplan__list {
@@ -2432,6 +2438,7 @@ body::-webkit-scrollbar {
 }
 
 .masterplan__dot-black .masterplan__dot-inner {
+  border: 1px solid rgba(255, 255, 255, 0.6);
   background-color: #000;
   padding: 8px 10px 8px 5px;
   border-radius: 5px;
@@ -2452,7 +2459,7 @@ body::-webkit-scrollbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: -1px;
+  margin-top: -2px;
 }
 
 .masterplan__dot-black .dot-masterplan__text {
@@ -5516,12 +5523,12 @@ body::-webkit-scrollbar {
   }
 
   .intro__qrcode {
-    height: 50px;
+    height: 80px;
   }
 
   .intro__qrcode img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
   }
 
   .intro__bg::after {
@@ -6217,8 +6224,7 @@ body::-webkit-scrollbar {
   }
 
   .footer__container {
-    padding-bottom: 0;
-    padding-top: 40px;
+    padding-bottom: 70px;
   }
 
   .footer__title {
@@ -6415,6 +6421,14 @@ body::-webkit-scrollbar {
     margin-top: 0;
   }
 
+  .footer__container {
+    padding-bottom: 30px;
+  }
+
+  .footer__sub {
+    padding-bottom: 15px;
+  }
+
   .footer__title {
     font-size: 26px;
     padding-bottom: 15px;
@@ -6427,6 +6441,15 @@ body::-webkit-scrollbar {
 
   .footer__center {
     padding: 20px 28px;
+    margin-bottom: 10px;
+  }
+
+  .footer__form {
+    gap: 15px;
+  }
+
+  .footer__form-container {
+    gap: 4px;
   }
 
   .footer__form-btn {
@@ -6435,6 +6458,10 @@ body::-webkit-scrollbar {
 
   .footer__logos {
     margin-top: 23px;
+  }
+
+  .footer__logo {
+    max-width: 80px;
   }
 
   .developer-popup__row {
