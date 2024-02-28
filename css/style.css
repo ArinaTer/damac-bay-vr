@@ -859,6 +859,7 @@ body::-webkit-scrollbar {
   width: 100%;
   z-index: 99;
   padding: 25px 0 0;
+  height: 2.708vw;
 }
 
 .header__bg {
@@ -892,8 +893,6 @@ body::-webkit-scrollbar {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 10;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
 .privacyPopup .header__wrapper {
