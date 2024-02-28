@@ -1985,6 +1985,11 @@ body::-webkit-scrollbar {
   visibility: hidden;
 }
 
+.masterplan__list::after {
+  content: "";
+  position: absolute;
+}
+
 ._show .masterplan__list {
   opacity: 1;
   visibility: visible;
