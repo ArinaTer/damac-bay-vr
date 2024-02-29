@@ -1901,22 +1901,17 @@ body::-webkit-scrollbar {
   z-index: 999;
 }
 
+.masterplan__bg video,
 .masterplan__bg img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  width: 100%;
-  height: 100%;
-}
-
-.masterplan__bg video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .masterplan__btns {
@@ -1983,17 +1978,6 @@ body::-webkit-scrollbar {
   z-index: 1122;
   opacity: 0;
   visibility: hidden;
-}
-
-.masterplan__list::after {
-  content: "";
-  position: absolute;
-  bottom: -90px;
-  left: -135px;
-  width: 269px;
-  height: 269px;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
 }
 
 ._show .masterplan__list {
