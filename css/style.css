@@ -2016,6 +2016,83 @@ body::-webkit-scrollbar {
   font-weight: 500;
 }
 
+.masterplan__selector {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0px -0.408088px 0.816176px rgba(255, 255, 255, 0.3), inset 0px -0.408088px 0.816176px rgba(255, 255, 255, 0.25), inset 0.816176px 1.22426px 3.26471px rgba(0, 0, 0, 0.08), inset 0.816176px 1.22426px 3.26471px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px -0.408088px 0.816176px rgba(255, 255, 255, 0.3), inset 0px -0.408088px 0.816176px rgba(255, 255, 255, 0.25), inset 0.816176px 1.22426px 3.26471px rgba(0, 0, 0, 0.08), inset 0.816176px 1.22426px 3.26471px rgba(0, 0, 0, 0.1);
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3px 3px 4px;
+  z-index: 1122;
+  opacity: 0;
+  visibility: hidden;
+}
+
+._show .masterplan__selector {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: 0.3s ease 0s;
+  transition: 0.3s ease 0s;
+}
+
+.masterplan__selector-btn {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(94, 94, 94, 0.1)), to(rgba(94, 94, 94, 0.1))), rgba(255, 255, 255, 0.12);
+  background: linear-gradient(0deg, rgba(94, 94, 94, 0.1), rgba(94, 94, 94, 0.1)), rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  padding: 8px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.masterplan__selector-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  padding: 1px;
+  background: linear-gradient(149.11deg, rgba(255, 255, 255, 0.4) 4.33%, rgba(255, 255, 255, 0.0001) 34.44%, rgba(255, 255, 255, 0.0001) 46.96%, rgba(255, 255, 255, 0.1) 78.54%);
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.masterplan__selector-btn span {
+  color: #fff;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 13px;
+}
+
 .masterplan canvas {
   border: 1px solid black;
 }
@@ -2419,11 +2496,14 @@ body::-webkit-scrollbar {
           flex-direction: column;
   padding: 0 !important;
   background-image: none !important;
+  position: relative;
 }
 
 .masterplan__dot-black .masterplan__dot-inner {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background-color: #000;
+  width: 160px;
+  height: 63px;
+  position: relative;
+  z-index: 1;
   padding: 8px 10px 8px 5px;
   border-radius: 5px;
   background-image: linear-gradient(118deg, rgba(255, 255, 255, 0) 50.95%, rgba(255, 255, 255, 0.17) 50.96%, rgba(255, 255, 255, 0) 75.39%);
@@ -2440,10 +2520,17 @@ body::-webkit-scrollbar {
 }
 
 .masterplan__dot-black .masterplan__dot-arrow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: -2px;
+  position: absolute;
+  top: 0;
+  width: 160px;
+  height: 71px;
+}
+
+.masterplan__dot-black .masterplan__dot-arrow img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .masterplan__dot-black .dot-masterplan__text {
@@ -4946,7 +5033,7 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 1600px) {
-  .masterplan__media {
+  .masterplan__draggable {
     -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
             transform: translateY(0%);
@@ -4966,6 +5053,16 @@ body::-webkit-scrollbar {
 
   .masterplan__dot-white .dot-masterplan__title {
     font-size: 10px;
+  }
+
+  .masterplan__dot-black .masterplan__dot-inner {
+    width: 125px;
+    height: 49px;
+  }
+
+  .masterplan__dot-black .masterplan__dot-arrow {
+    width: 125px;
+    height: 57px;
   }
 
   .masterplan__dot-black .dot-masterplan__text {
@@ -5003,10 +5100,10 @@ body::-webkit-scrollbar {
     font-size: 14px;
   }
 
-  .masterplan__media {
-    -webkit-transform: translateY(-8%);
-        -ms-transform: translateY(-8%);
-            transform: translateY(-8%);
+  .masterplan__draggable {
+    -webkit-transform: translateY(-10%);
+        -ms-transform: translateY(-10%);
+            transform: translateY(-10%);
   }
 
   .offer-popup__text p {
@@ -5037,7 +5134,7 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 4000px) {
-  .masterplan__media {
+  .masterplan__draggable {
     -webkit-transform: translateY(-13%);
         -ms-transform: translateY(-13%);
             transform: translateY(-13%);
@@ -5067,11 +5164,19 @@ body::-webkit-scrollbar {
   }
 }
 
-@media (max-width: 1600px) and (max-height: 750px) {
-  .masterplan__media {
-    -webkit-transform: translateY(0%);
-        -ms-transform: translateY(0%);
-            transform: translateY(0%);
+@media (max-width: 1440px) and (max-height: 750px) {
+  .masterplan__draggable {
+    -webkit-transform: translateY(-6%);
+        -ms-transform: translateY(-6%);
+            transform: translateY(-6%);
+  }
+}
+
+@media (max-width: 1440px) and (max-height: 700px) {
+  .masterplan__draggable {
+    -webkit-transform: translateY(-7%);
+        -ms-transform: translateY(-7%);
+            transform: translateY(-7%);
   }
 }
 
@@ -6205,6 +6310,12 @@ body::-webkit-scrollbar {
 
   .header-menu__form-button {
     margin-top: 20px;
+  }
+
+  .masterplan__draggable {
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
   }
 
   .footer__container {
