@@ -5,10 +5,10 @@
   width: 100%;
   z-index: 99;
   padding: 25px 0 0;
-  height: 2.708vw;
+  // height: 2.708vw;
   // opacity: 0;
 
-  @include md {
+  @include lg {
     padding: 15px 0 0;
   }
 
@@ -137,7 +137,7 @@
     align-items: center;
     gap: 22px;
     position: relative;
-    @include md {
+    @include lg {
       display: none;
     }
   }
@@ -154,7 +154,7 @@
   &__phone {
     // width: 190px;
     height: 30px;
-    @include md {
+    @include lg {
       display: none;
     }
 
@@ -277,16 +277,12 @@
     position: relative;
     align-items: center;
     gap: 10px;
-    height: 44px;
+    height:34px;
     display: none;
 
 
     @include lg {
       display: flex;
-    }
-
-    @include md {
-      height: 34px;
     }
 
     @include sm {
@@ -649,3 +645,4 @@
     }
   }
 }
+

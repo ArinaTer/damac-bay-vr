@@ -184,67 +184,74 @@ export function masterplan() {
     document.body.classList.remove("close__modal-btn");
   }
 
-  const selectNight = document.querySelectorAll('.masterplan__selector-btn-night');
-  const selectDay = document.querySelectorAll('.masterplan__selector-btn-day');
-  
-  const videoNight = document.querySelectorAll('.masterplan__video-night');
-  const videoDay = document.querySelectorAll('.masterplan__video-day');
-  
-  // selectNight.forEach(function(button) {
-  //     button.addEventListener('click', function() {
-  //         // Убираем класс _active у всех кнопок ночного режима
-  //         selectNight.forEach(function(btn) {
-  //             btn.classList.remove('_active');
-  //         });
-  //         // Добавляем класс _active только к выбранной кнопке ночного режима
-  //         button.classList.add('_active');
-          
-  //         // Убираем класс _active у всех видео ночного режима
-  //         videoNight.forEach(function(video) {
-  //             video.classList.remove('_active');
-  //         });
-  //         // Добавляем класс _active только к видео выбранного ночного режима
-  //         videoNight.forEach(function(video) {
-  //             video.classList.add('_active');
-  //         });
-  
-  //         // Убираем класс _active у всех кнопок дневного режима
-  //         selectDay.forEach(function(btn) {
-  //             btn.classList.remove('_active');
-  //         });
-  //         // Убираем класс _active у всех видео дневного режима
-  //         videoDay.forEach(function(video) {
-  //             video.classList.remove('_active');
-  //         });
-  //     });
-  // });
-  
-  // selectDay.forEach(function(button) {
-  //     button.addEventListener('click', function() {
-  //         // Убираем класс _active у всех кнопок дневного режима
-  //         selectDay.forEach(function(btn) {
-  //             btn.classList.remove('_active');
-  //         });
-  //         // Добавляем класс _active только к выбранной кнопке дневного режима
-  //         button.classList.add('_active');
-          
-  //         // Убираем класс _active у всех видео дневного режима
-  //         videoDay.forEach(function(video) {
-  //             video.classList.remove('_active');
-  //         });
-  //         // Добавляем класс _active только к видео выбранного дневного режима
-  //         videoDay.forEach(function(video) {
-  //             video.classList.add('_active');
-  //         });
-  
-  //         // Убираем класс _active у всех кнопок ночного режима
-  //         selectNight.forEach(function(btn) {
-  //             btn.classList.remove('_active');
-  //         });
-  //         // Убираем класс _active у всех видео ночного режима
-  //         videoNight.forEach(function(video) {
-  //             video.classList.remove('_active');
-  //         });
-  //     });
-  // });
+  const selectNight = document.querySelectorAll(
+    ".masterplan__selector-btn-night"
+  );
+  const selectDay = document.querySelectorAll(".masterplan__selector-btn-day");
+
+  const videoNight = document.querySelectorAll(".masterplan__video-night");
+  const videoDay = document.querySelectorAll(".masterplan__video-day");
+
+  selectNight.forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectNight.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      button.classList.add("_active");
+
+      videoNight.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+
+      videoNight.forEach(function (video) {
+        video.classList.add("_active");
+      });
+
+      selectDay.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      videoDay.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+      const selectorBgs = document.querySelectorAll(".masterplan__selector-bg");
+
+      selectorBgs.forEach(function(selectorBg) {
+          selectorBg.style.left = "0%";
+      });
+    });
+  });
+
+  selectDay.forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectDay.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      button.classList.add("_active");
+
+      videoDay.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+
+      videoDay.forEach(function (video) {
+        video.classList.add("_active");
+      });
+
+      selectNight.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      videoNight.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+      const selectorBgs = document.querySelectorAll(".masterplan__selector-bg");
+
+      selectorBgs.forEach(function(selectorBg) {
+          selectorBg.style.left = "50%";
+      });
+
+    });
+  });
 }

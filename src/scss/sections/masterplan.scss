@@ -26,10 +26,6 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       line-height: 0;
     }
   }
@@ -40,8 +36,11 @@
     opacity: 0;
     transition: all 1s;
     visibility: hidden;
-    will-change: opacity;
     line-height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     &._active {
       opacity: 1;
@@ -162,41 +161,57 @@
     width: auto;
     height: auto;
     border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 3px 6px;
+
     z-index: 1122;
     opacity: 0;
     visibility: hidden;
-    ._show & {
+    @include lg {
+      bottom: initial;
+      top: 50%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+    }
+    .vr360 & {
       opacity: 1;
       visibility: visible;
-      transition: 0.3s ease 0s;
     }
-  }
+    .open-menu & {
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s ease 0s;
+    }
+    &-desctop {
+      display: flex;
+      @include lg {
+        display: none;
+      }
+    }
+    &-mobile {
+      display: none;
+      @include lg {
+        display: flex;
+      }
+    }
 
-  // masterplan__selector-btn
-  &__selector-btn {
-    border-radius: 5px;
-    padding: 8px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    opacity: 0.5;
-    transition: all 0.3s;
-
-    &._active {
-      opacity: 1;
-      background: linear-gradient(
-          0deg,
-          rgba(94, 94, 94, 0.1),
-          rgba(94, 94, 94, 0.1)
-        ),
-        rgba(255, 255, 255, 0.12);
-
+    &-bg {
+      width: 120px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.3s ease;
+      background: linear-gradient( 0deg, rgba(94, 94, 94, 0.1), rgba(94, 94, 94, 0.1)),rgba(255, 255, 255, 0.12);
+      z-index: -1;
+      border-radius: 5px;
+      @include lg {
+        background: #fff;
+        width: 60px;
+        height: 30px;
+      }
+      @include sm {
+        width: 26px;
+        height: 26px;
+      }
       &::after {
         content: "";
         position: absolute;
@@ -220,6 +235,47 @@
         pointer-events: none;
       }
     }
+  }
+
+  &__selector-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 3px;
+    @include lg {
+      margin: 5px 6px;
+    }
+  }
+
+  // masterplan__selector-btn
+  &__selector-btn {
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    // padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    opacity: 0.5;
+    transition: all 0.3s;
+    @include lg {
+      width: 60px;
+      height: 30px;
+    }
+    @include sm {
+      width: 26px;
+      height: 26px;
+    }
+
+    &._active {
+      opacity: 1;
+      @include lg {
+        filter: invert(1);
+      }
+    }
 
     span {
       color: #fff;
@@ -227,6 +283,9 @@
       font-size: 14px;
       line-height: 13px;
       // text-transform: uppercase;
+      @include lg {
+        display: none;
+      }
     }
   }
 
@@ -453,21 +512,14 @@
     visibility: visible;
   }
 
-  &._show &__bg {
-    z-index: 1;
-    transform: translate(0%, 0%) scale(1);
-    transition: transform 1s;
-  }
-
   //masterplan__draggable
   &__draggable {
-
     @media (min-width: 4000px) {
       transform: translateY(-13%);
     }
 
     @media (min-width: 1920px) {
-      transform: translateY(-10%);
+      transform: translateY(-8%);
     }
     @media (min-width: 1600px) {
       transform: translateY(0%);

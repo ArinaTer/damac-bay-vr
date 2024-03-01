@@ -56,7 +56,6 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.75);
-      transform: background 10s;
       @include md {
         background: linear-gradient(
             180deg,
@@ -70,7 +69,6 @@
     .hidden & {
       opacity: 0;
       visibility: hidden;
-      transition: all 1s;
     }
   }
 
@@ -169,7 +167,6 @@
     span {
       font-size: 32px;
       line-height: 100%;
-      // @include rubikExtraBold;
       font-weight: 600;
       color: #fff;
       position: relative;
