@@ -1524,11 +1524,10 @@ body::-webkit-scrollbar {
 }
 
 .hidden .intro__bg {
-  opacity: 0 !important;
+  opacity: 0;
   visibility: hidden;
-  -webkit-transform: all 1s;
-      -ms-transform: all 1s;
-          transform: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .intro__container {
@@ -1899,6 +1898,7 @@ body::-webkit-scrollbar {
   top: 0;
   right: 0;
   z-index: 999;
+  line-height: 0;
 }
 
 .masterplan__bg video {
@@ -1914,6 +1914,7 @@ body::-webkit-scrollbar {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  line-height: 0;
 }
 
 .masterplan__video {
@@ -1924,6 +1925,7 @@ body::-webkit-scrollbar {
   transition: all 1s;
   visibility: hidden;
   will-change: opacity;
+  line-height: 0;
 }
 
 .masterplan__video._active {
@@ -2305,6 +2307,13 @@ body::-webkit-scrollbar {
 
 .masterplan._show .masterplan__bg {
   z-index: 1;
+  -webkit-transform: translate(0%, 0%) scale(1);
+      -ms-transform: translate(0%, 0%) scale(1);
+          transform: translate(0%, 0%) scale(1);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 .masterplan__media {
