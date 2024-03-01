@@ -8,7 +8,7 @@ export function masterplan() {
   const backtoMain = gsap.utils.toArray("[backto-main]");
   const toggleTextsIntro = gsap.utils.toArray("[data-toggle-visible]");
 
-  const video = document.querySelector(".masterplan__video");
+  const video = document.querySelector(".masterplan__video video");
 
   if (
     navigator.userAgent.indexOf("Safari") !== -1 &&
@@ -190,61 +190,61 @@ export function masterplan() {
   const videoNight = document.querySelectorAll('.masterplan__video-night');
   const videoDay = document.querySelectorAll('.masterplan__video-day');
   
-  selectNight.forEach(function(button) {
-      button.addEventListener('click', function() {
-          // Убираем класс _active у всех кнопок ночного режима
-          selectNight.forEach(function(btn) {
-              btn.classList.remove('_active');
-          });
-          // Добавляем класс _active только к выбранной кнопке ночного режима
-          button.classList.add('_active');
+  // selectNight.forEach(function(button) {
+  //     button.addEventListener('click', function() {
+  //         // Убираем класс _active у всех кнопок ночного режима
+  //         selectNight.forEach(function(btn) {
+  //             btn.classList.remove('_active');
+  //         });
+  //         // Добавляем класс _active только к выбранной кнопке ночного режима
+  //         button.classList.add('_active');
           
-          // Убираем класс _active у всех видео ночного режима
-          videoNight.forEach(function(video) {
-              video.classList.remove('_active');
-          });
-          // Добавляем класс _active только к видео выбранного ночного режима
-          videoNight.forEach(function(video) {
-              video.classList.add('_active');
-          });
+  //         // Убираем класс _active у всех видео ночного режима
+  //         videoNight.forEach(function(video) {
+  //             video.classList.remove('_active');
+  //         });
+  //         // Добавляем класс _active только к видео выбранного ночного режима
+  //         videoNight.forEach(function(video) {
+  //             video.classList.add('_active');
+  //         });
   
-          // Убираем класс _active у всех кнопок дневного режима
-          selectDay.forEach(function(btn) {
-              btn.classList.remove('_active');
-          });
-          // Убираем класс _active у всех видео дневного режима
-          videoDay.forEach(function(video) {
-              video.classList.remove('_active');
-          });
-      });
-  });
+  //         // Убираем класс _active у всех кнопок дневного режима
+  //         selectDay.forEach(function(btn) {
+  //             btn.classList.remove('_active');
+  //         });
+  //         // Убираем класс _active у всех видео дневного режима
+  //         videoDay.forEach(function(video) {
+  //             video.classList.remove('_active');
+  //         });
+  //     });
+  // });
   
-  selectDay.forEach(function(button) {
-      button.addEventListener('click', function() {
-          // Убираем класс _active у всех кнопок дневного режима
-          selectDay.forEach(function(btn) {
-              btn.classList.remove('_active');
-          });
-          // Добавляем класс _active только к выбранной кнопке дневного режима
-          button.classList.add('_active');
+  // selectDay.forEach(function(button) {
+  //     button.addEventListener('click', function() {
+  //         // Убираем класс _active у всех кнопок дневного режима
+  //         selectDay.forEach(function(btn) {
+  //             btn.classList.remove('_active');
+  //         });
+  //         // Добавляем класс _active только к выбранной кнопке дневного режима
+  //         button.classList.add('_active');
           
-          // Убираем класс _active у всех видео дневного режима
-          videoDay.forEach(function(video) {
-              video.classList.remove('_active');
-          });
-          // Добавляем класс _active только к видео выбранного дневного режима
-          videoDay.forEach(function(video) {
-              video.classList.add('_active');
-          });
+  //         // Убираем класс _active у всех видео дневного режима
+  //         videoDay.forEach(function(video) {
+  //             video.classList.remove('_active');
+  //         });
+  //         // Добавляем класс _active только к видео выбранного дневного режима
+  //         videoDay.forEach(function(video) {
+  //             video.classList.add('_active');
+  //         });
   
-          // Убираем класс _active у всех кнопок ночного режима
-          selectNight.forEach(function(btn) {
-              btn.classList.remove('_active');
-          });
-          // Убираем класс _active у всех видео ночного режима
-          videoNight.forEach(function(video) {
-              video.classList.remove('_active');
-          });
-      });
-  });
+  //         // Убираем класс _active у всех кнопок ночного режима
+  //         selectNight.forEach(function(btn) {
+  //             btn.classList.remove('_active');
+  //         });
+  //         // Убираем класс _active у всех видео ночного режима
+  //         videoNight.forEach(function(video) {
+  //             video.classList.remove('_active');
+  //         });
+  //     });
+  // });
 }

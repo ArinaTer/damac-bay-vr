@@ -19,6 +19,7 @@
     top: 0;
     right: 0;
     z-index: 999;
+    line-height: 0;
 
     video {
       width: 100%;
@@ -29,6 +30,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      line-height: 0;
     }
   }
   // masterplan__video
@@ -39,6 +41,7 @@
     transition: all 1s;
     visibility: hidden;
     will-change: opacity;
+    line-height: 0;
 
     &._active {
       opacity: 1;
