@@ -452,8 +452,8 @@
 
   &._show &__bg {
     z-index: 1;
-    // transform: translate(0%, 0%) scale(1);
-    // transition: transform 1s;
+    transform: translate(0%, 0%) scale(1);
+    transition: transform 1s;
   }
 
   //masterplan__draggable

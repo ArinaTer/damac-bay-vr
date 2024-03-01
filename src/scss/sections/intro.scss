@@ -68,9 +68,9 @@
     }
 
     .hidden & {
-      opacity: 0 !important;
+      opacity: 0;
       visibility: hidden;
-      transform: all 1s;
+      transition: all 1s;
     }
   }
 
