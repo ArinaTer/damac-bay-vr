@@ -10,6 +10,7 @@ Swiper.use([Autoplay, Pagination, EffectFade]);
 
 import "latest-createjs/lib/preloadjs/preloadjs.js";
 import { loader } from "./components/loader.js";
+import { isMobile } from './modules/functions.js';
 import { header } from "./components/header.js";
 import { global } from "./global.js";
 import { popups } from "./components/popups.js";
@@ -21,9 +22,9 @@ window.windowWidth = window.innerWidth;
 window.windowHeight = window.innerHeight;
 window.mm = gsap.matchMedia();
 window.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
-document.addEventListener('contextmenu', (e)=> {
-    e.preventDefault();
+isMobile.any() ? document.body.classList.add('mobile-detected') : null;
+document.addEventListener('contextmenu', (e) => {
+	e.preventDefault();
 });
 // Fancybox.defaults.Hash = false;
 
