@@ -147,6 +147,10 @@ button {
   content: url("https://d3b6muno9lbfvx.cloudfront.net/sls-residences-vr/files/icons/fullscreen-close.svg");
 }
 
+.psv-button--active {
+  background-color: transparent;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
