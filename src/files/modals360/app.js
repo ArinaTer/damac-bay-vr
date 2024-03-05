@@ -58,9 +58,12 @@ viewer.addEventListener('ready', (e) => {
 }, { once: true });
 
 const fakeFullscrenn = document.querySelector(".btn-fake");
-
+fakeFullscrenn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+<path d="M18 7H22V9H16V3H18V7ZM8 9H2V7H6V3H8V9ZM18 17V21H16V15H22V17H18ZM8 15V21H6V17H2V15H8Z" fill="rgba(109,103,103,1)"></path>
+</svg>`;
 fakeFullscrenn.addEventListener("click", () => {
   document.body.classList.toggle("fake-fullscreen");
+  parentWindow.document.body.classList.toggle('fake-fullscreen');
 });
 
 

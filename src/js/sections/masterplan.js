@@ -26,11 +26,9 @@ export function masterplan() {
       stagger: 0.1,
       duration: 0.2,
       onComplete: function () {
-        gsap.set(masterplan, { className: "masterplan _show" });
-        gsap.set(document.body, { className: "vr360" });
-        // setTimeout(() => {
-        gsap.set(intro, { className: "intro hidden" });
-        // }, 200);
+        masterplan.classList.add('_show');
+        document.body.classList.add('vr360');
+        intro.classList.add('hidden');
       },
     });
   }
@@ -38,9 +36,9 @@ export function masterplan() {
   function toIntro() {
     gsap.to(toggleTextsIntro, {
       onStart: function () {
-        gsap.set(intro, { className: "intro" });
-        gsap.set(document.body, { className: "" });
-        gsap.set(masterplan, { className: "masterplan" });
+        masterplan.classList.remove('_show');
+        document.body.classList.remove('vr360');
+        intro.classList.remove('hidden');
       },
       yPercent: 0,
       opacity: 1,
@@ -217,8 +215,8 @@ export function masterplan() {
       });
       const selectorBgs = document.querySelectorAll(".masterplan__selector-bg");
 
-      selectorBgs.forEach(function(selectorBg) {
-          selectorBg.style.left = "0%";
+      selectorBgs.forEach(function (selectorBg) {
+        selectorBg.style.left = "0%";
       });
     });
   });
@@ -248,8 +246,8 @@ export function masterplan() {
       });
       const selectorBgs = document.querySelectorAll(".masterplan__selector-bg");
 
-      selectorBgs.forEach(function(selectorBg) {
-          selectorBg.style.left = "50%";
+      selectorBgs.forEach(function (selectorBg) {
+        selectorBg.style.left = "50%";
       });
 
     });
