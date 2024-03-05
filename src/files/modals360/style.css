@@ -140,6 +140,9 @@ button {
 .psv-zoom-button[title="Zoom in"]::after {
   content: url("https://d3b6muno9lbfvx.cloudfront.net/sls-residences-vr/files/icons/zoom-in.svg");
 }
+.psv-fullscreen-button.psv-button--active::after {
+  content: url("https://d3b6muno9lbfvx.cloudfront.net/damac-bay-vr/files/icons/tochna-close.svg");
+}
 .psv-fullscreen-button::after {
   content: url("https://d3b6muno9lbfvx.cloudfront.net/sls-residences-vr/files/icons/fullscreen-close.svg");
 }
@@ -1061,13 +1064,11 @@ button {
     justify-content: center;
     align-items: center;
     transition: 0.3s ease;
+    background-color: transparent;
   }
   .btn-fake svg {
     width: 24px;
     height: 24px;
-  }
-  .btn-fake svg path {
-    fill: rgba(255, 255, 255, 0.7);
   }
   .modal-center {
     width: 100%;
@@ -1159,7 +1160,7 @@ button {
   }
   .psv-navbar::before {
     width: 98%;
-    height: 101%;
+    height: 99%;
   }
   .psv-fullscreen-button {
     margin-top: 0;

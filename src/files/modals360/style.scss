@@ -167,6 +167,12 @@ button {
 	}
 
 	&-fullscreen-button {
+		&.psv-button--active {
+			&::after {
+				content: url('https://d3b6muno9lbfvx.cloudfront.net/damac-bay-vr/files/icons/tochna-close.svg');
+			}
+		}
+
 		&::after {
 			content: url('https://d3b6muno9lbfvx.cloudfront.net/sls-residences-vr/files/icons/fullscreen-close.svg');
 		}
@@ -1212,7 +1218,6 @@ button {
 }
 .fake-fullscreen {
 	.psv-fullscreen-button {
-    
 		&::after {
 			opacity: 0;
 		}
@@ -1283,13 +1288,11 @@ button {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-    transition: 0.3s ease;
+		transition: 0.3s ease;
+    background-color: transparent;
 		svg {
 			width: 24px;
 			height: 24px;
-			path {
-				fill: rgba(255, 255, 255, 0.7);
-			}
 		}
 	}
 	.modal-center {
@@ -1394,7 +1397,7 @@ button {
 			padding: 0;
 			&::before {
 				width: 98%;
-				height: 101%;
+				height: 99%;
 			}
 		}
 
