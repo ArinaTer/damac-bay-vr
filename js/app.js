@@ -8500,6 +8500,10 @@ function touchMoveHandler() {
 	e.preventDefault();
 	e.stopImmediatePropagation();
 };
+
+let isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+
+
 ;// CONCATENATED MODULE: ./node_modules/gsap/gsap-core.js
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -30675,11 +30679,9 @@ function masterplan() {
       stagger: 0.1,
       duration: 0.2,
       onComplete: function () {
-        gsap.set(masterplan, { className: "masterplan _show" });
-        gsap.set(document.body, { className: "vr360" });
-        // setTimeout(() => {
-        gsap.set(intro, { className: "intro hidden" });
-        // }, 200);
+        masterplan.classList.add('_show');
+        document.body.classList.add('vr360');
+        intro.classList.add('hidden');
       },
     });
   }
@@ -30687,9 +30689,9 @@ function masterplan() {
   function toIntro() {
     gsap.to(toggleTextsIntro, {
       onStart: function () {
-        gsap.set(intro, { className: "intro" });
-        gsap.set(document.body, { className: "" });
-        gsap.set(masterplan, { className: "masterplan" });
+        masterplan.classList.remove('_show');
+        document.body.classList.remove('vr360');
+        intro.classList.remove('hidden');
       },
       yPercent: 0,
       opacity: 1,
@@ -30833,6 +30835,76 @@ function masterplan() {
     document.body.classList.remove("close__modal-btn");
   }
 
+  const selectNight = document.querySelectorAll(
+    ".masterplan__selector-btn-night"
+  );
+  const selectDay = document.querySelectorAll(".masterplan__selector-btn-day");
+
+  const videoNight = document.querySelectorAll(".masterplan__video-night");
+  const videoDay = document.querySelectorAll(".masterplan__video-day");
+
+  selectNight.forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectNight.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      button.classList.add("_active");
+
+      videoNight.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+
+      videoNight.forEach(function (video) {
+        video.classList.add("_active");
+      });
+
+      selectDay.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      videoDay.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+      const selectorBgs = document.querySelectorAll(".masterplan__selector-bg");
+
+      selectorBgs.forEach(function (selectorBg) {
+        selectorBg.style.left = "0%";
+      });
+    });
+  });
+
+  selectDay.forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectDay.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      button.classList.add("_active");
+
+      videoDay.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+
+      videoDay.forEach(function (video) {
+        video.classList.add("_active");
+      });
+
+      selectNight.forEach(function (btn) {
+        btn.classList.remove("_active");
+      });
+
+      videoNight.forEach(function (video) {
+        video.classList.remove("_active");
+      });
+      const selectorBgs = document.querySelectorAll(".masterplan__selector-bg");
+
+      selectorBgs.forEach(function (selectorBg) {
+        selectorBg.style.left = "50%";
+      });
+
+    });
+  });
 }
 
 ;// CONCATENATED MODULE: ./src/js/app.js
@@ -30855,13 +30927,14 @@ Swiper.use([Autoplay, Pagination, EffectFade]);
 
 
 
+
 window.windowWidth = window.innerWidth;
 window.windowHeight = window.innerHeight;
 window.mm = gsap.matchMedia();
 window.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
-document.addEventListener('contextmenu', (e)=> {
-    e.preventDefault();
+isMobile.any() ? document.body.classList.add('mobile-detected') : null;
+document.addEventListener('contextmenu', (e) => {
+	e.preventDefault();
 });
 // Fancybox.defaults.Hash = false;
 

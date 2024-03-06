@@ -1,5 +1,5 @@
-@import "../fonts/Cinzel/stylesheet.css";
-@import "../fonts/Rubik/stylesheet.css";
+@import '../fonts/Cinzel/stylesheet.css';
+@import '../fonts/Rubik/stylesheet.css';
 * {
   padding: 0;
   margin: 0;
@@ -65,7 +65,6 @@ button {
 }
 
 .psv-navbar {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   justify-content: center;
@@ -141,8 +140,15 @@ button {
 .psv-zoom-button[title="Zoom in"]::after {
   content: url("https://d3b6muno9lbfvx.cloudfront.net/sls-residences-vr/files/icons/zoom-in.svg");
 }
+.psv-fullscreen-button.psv-button--active::after {
+  content: url("https://d3b6muno9lbfvx.cloudfront.net/damac-bay-vr/files/icons/tochna-close.svg");
+}
 .psv-fullscreen-button::after {
   content: url("https://d3b6muno9lbfvx.cloudfront.net/sls-residences-vr/files/icons/fullscreen-close.svg");
+}
+
+.psv-button--active {
+  background-color: transparent;
 }
 
 .wrapper {
@@ -153,7 +159,6 @@ button {
   left: 0;
   right: 0;
   z-index: 5;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 8px;
@@ -564,20 +569,10 @@ button {
 .info__form-input input:focus::-moz-placeholder {
   opacity: 0;
 }
-.info__form-input input:focus:-ms-input-placeholder {
-  opacity: 0;
-}
 .info__form-input input:focus::placeholder {
   opacity: 0;
 }
 .info__form-input input::-moz-placeholder {
-  color: #888;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 24px;
-}
-.info__form-input input:-ms-input-placeholder {
   color: #888;
   font-size: 12px;
   font-style: normal;
@@ -608,7 +603,7 @@ button {
   margin-bottom: 0;
 }
 .info__form-btn {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(272.73deg, rgba(255, 255, 255, 0.5) -0.15%, rgba(223, 223, 223, 0.5) 45.81%), #FFFFFF;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(272.73deg, rgba(255, 255, 255, 0.5) -0.15%, rgba(223, 223, 223, 0.5) 45.81%), #ffffff;
   border-radius: 5px;
   padding: 16px 0;
   display: flex;
@@ -886,20 +881,10 @@ button {
 .floorplan__form-input input:focus::-moz-placeholder {
   opacity: 0;
 }
-.floorplan__form-input input:focus:-ms-input-placeholder {
-  opacity: 0;
-}
 .floorplan__form-input input:focus::placeholder {
   opacity: 0;
 }
 .floorplan__form-input input::-moz-placeholder {
-  color: #888;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-.floorplan__form-input input:-ms-input-placeholder {
   color: #888;
   font-size: 12px;
   font-style: normal;
@@ -1035,6 +1020,9 @@ button {
   opacity: 0;
 }
 
+.fake-fullscreen .psv-fullscreen-button::after {
+  opacity: 0;
+}
 .fake-fullscreen .btn-fake {
   bottom: 20px;
   opacity: 1;
@@ -1062,7 +1050,7 @@ button {
 }
 @media (max-width: 1100px) {
   .floorplan__inner,
-.info__inner {
+  .info__inner {
     gap: 20px;
   }
 }
@@ -1076,6 +1064,15 @@ button {
     z-index: 999;
     transition: 0.2s ease;
     opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    background-color: transparent;
+  }
+  .btn-fake svg {
+    width: 24px;
+    height: 24px;
   }
   .modal-center {
     width: 100%;
@@ -1167,7 +1164,7 @@ button {
   }
   .psv-navbar::before {
     width: 98%;
-    height: 101%;
+    height: 99%;
   }
   .psv-fullscreen-button {
     margin-top: 0;
@@ -1188,7 +1185,7 @@ button {
     transform: translateX(-50%);
   }
   .floorplan__media,
-.info__media {
+  .info__media {
     padding: 40px 30px;
   }
   .floorplan {
@@ -1226,12 +1223,9 @@ button {
   }
   .floorplan .floorplan__form-input input {
     font-size: 16px;
-    color: #FFF;
+    color: #fff;
   }
   .floorplan .floorplan__form-input input::-moz-placeholder {
-    font-size: 16px;
-  }
-  .floorplan .floorplan__form-input input:-ms-input-placeholder {
     font-size: 16px;
   }
   .floorplan .floorplan__form-input input::placeholder {
@@ -1243,7 +1237,7 @@ button {
     -webkit-text-fill-color: #fff !important;
   }
   .floorplan .floorplan__form-btn {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(272.73deg, rgba(255, 255, 255, 0.5) -0.15%, rgba(223, 223, 223, 0.5) 45.81%), #FFFFFF;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.17) 100%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(272.73deg, rgba(255, 255, 255, 0.5) -0.15%, rgba(223, 223, 223, 0.5) 45.81%), #ffffff;
   }
   .modal360__close-btn {
     opacity: 0;
@@ -1275,11 +1269,11 @@ button {
     overflow: hidden;
   }
   .info .info__subtitle {
-    color: #635D58;
+    color: #635d58;
     font-size: 16px;
   }
   .info .info__title {
-    color: #2E2A25;
+    color: #2e2a25;
     font-size: 32px;
     padding-bottom: 24px;
   }
@@ -1299,9 +1293,6 @@ button {
   .info .info__form-input input::-moz-placeholder {
     font-size: 16px;
   }
-  .info .info__form-input input:-ms-input-placeholder {
-    font-size: 16px;
-  }
   .info .info__form-input input::placeholder {
     font-size: 16px;
   }
@@ -1315,23 +1306,23 @@ button {
     left: 15px;
   }
   .floorplan,
-.info {
+  .info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
   .floorplan__inner,
-.info__inner {
+  .info__inner {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
   .floorplan__col,
-.info__col {
+  .info__col {
     gap: 16px;
   }
   .floorplan__form,
-.info__form {
+  .info__form {
     gap: 16px;
   }
   .floorplan {
@@ -1433,7 +1424,7 @@ button {
   .info__subtitle {
     font-size: 16px;
     padding-bottom: 15px;
-    color: #635D58;
+    color: #635d58;
     line-height: 30px;
   }
   .info__title {

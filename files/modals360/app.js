@@ -58,9 +58,16 @@ viewer.addEventListener('ready', (e) => {
 }, { once: true });
 
 const fakeFullscrenn = document.querySelector(".btn-fake");
-
+fakeFullscrenn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 22V17.5C15 15.01 17.01 15 19.5 15H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 15H5.5C7.99 15 9 15.51 9 18V22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 2V5C8 7.49 7.49 8 5 8H2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 9H18.5C16.01 9 15 8.49 15 6V2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
 fakeFullscrenn.addEventListener("click", () => {
   document.body.classList.toggle("fake-fullscreen");
+  parentWindow.document.body.classList.toggle('fake-fullscreen');
 });
 
 
