@@ -162,7 +162,7 @@
     height: auto;
     border-radius: 5px;
 
-    z-index: 1122;
+    z-index: 1124;
     opacity: 0;
     visibility: hidden;
     @include lg {
@@ -346,7 +346,7 @@
     width: 200px;
     opacity: 0;
     visibility: hidden;
-    z-index: 1122;
+    z-index: 1124;
 
     ._show & {
       opacity: 1;
@@ -382,7 +382,7 @@
     position: absolute;
     bottom: 26px;
     right: 65px;
-    z-index: 1122;
+    z-index: 1124;
     opacity: 0;
     visibility: hidden;
 
@@ -434,7 +434,7 @@
     position: absolute;
     bottom: 26px;
     left: 65px;
-    z-index: 1122;
+    z-index: 1124;
     opacity: 0;
     visibility: hidden;
 
