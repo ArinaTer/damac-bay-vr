@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+@@include('html/head.html',{ "title":"iframe" })
+<!-- disable-scroll -->
+
+<body class="">
+  <!-- @@include('html/components/loader.html') -->
+  <div id="turn" class="turn">
+    Please rotate your device<br />for best experienc
+    <br />
+    <br />
+  </div>
+  <main>
+    <div class="viewer active-ext-slides">
+      <div class="viewer__wrapper">
+        <div class="viewer__nav">
+          <div class="viewer__swiper">
+            <div class="swiper-button-prev">
+              <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16L1 8.5L9 1" stroke="white" />
+              </svg>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide ext"
+                  data-src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/VR_360_32_Post_Final_4_12K.webp">
+                  <img loading="lazy"
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/preview/VR_360_32_Post_Final_4_12K.webp"
+                    alt="photo" />
+                  <div class="swiper-slide-text">Exterior 360</div>
+                </div>
+                <div class="swiper-slide ext"
+                  data-src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/kr_25.webp">
+                  <img loading="lazy"
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/preview/kr_25.webp"
+                    alt="photo" />
+                  <div class="swiper-slide-text">Exterior 360</div>
+                </div>
+                <div class="swiper-slide ext"
+                  data-src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/kr_16.webp">
+                  <img loading="lazy"
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/preview/kr_16.webp"
+                    alt="photo" />
+                  <div class="swiper-slide-text">Exterior 360</div>
+                </div>
+
+                <div class="swiper-slide ext"
+                  data-src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/VR_360_32_Post_Final_4_12K.webp">
+                  <img loading="lazy"
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/preview/VR_360_32_Post_Final_4_12K.webp"
+                    alt="photo" />
+                  <div class="swiper-slide-text">Exterior 360</div>
+                </div>
+                
+                <div class="swiper-slide int"
+                  data-src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/kr_16.webp">
+                  <img loading="lazy"
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/preview/kr_16.webp"
+                    alt="photo" />
+                  <div class="swiper-slide-text">Interior 360</div>
+                </div>
+                <div class="swiper-slide int"
+                  data-src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/kr_25.webp">
+                  <img loading="lazy"
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/keturah-ritz/360panorama/road/preview/kr_25.webp"
+                    alt="photo" />
+                  <div class="swiper-slide-text">Interior 360</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next">
+              <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L9 8.5L0.999999 16" stroke="white" />
+              </svg>
+            </div>
+          </div>
+          @@include('./html/sections/viewer_parts/btns.html')
+        </div>
+      </div>
+      @@include('./html/sections/viewer_parts/fake_fullscreen.html')
+      @@include('./html/sections/viewer_parts/nav.html')
+    </div>
+  </main>
+  @@include('html/sections/gallery/index.html')
+  @@include('html/sections/popups.html')
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+          "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+        }
+      }
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gyroscope-plugin@5.0.2/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin@5.1.6/index.min.js"></script>
+  <script src="js/app.min.js"></script>
+  <script>
+    document.documentElement.className = "js";
+    var supportsCssVars = function () {
+      var e,
+        t = document.createElement("style");
+      return (
+        (t.innerHTML = "root: { --tmp-var: bold; }"),
+        document.head.appendChild(t),
+        (e = !!(
+          window.CSS &&
+          window.CSS.supports &&
+          window.CSS.supports("font-weight", "var(--tmp-var)")
+        )),
+        t.parentNode.removeChild(t),
+        e
+      );
+    };
+    supportsCssVars() ||
+      alert(
+        "Please view this site in a modern browser that supports CSS Variables."
+      );
+  </script>
+  <!-- <script type="module" src="https://fnst.axflare.com/landings/global-script/landings-global-script.js"></script> -->
+</body>
+
+</html>
