@@ -515,12 +515,12 @@
 
   //masterplan__draggable
   &__draggable {
-    @media (min-width: 4000px) {
-      transform: translateY(-13%);
+    
+    @media (max-width: 4000px) {
+      transform: translateY(-0%);
     }
-
     @media (min-width: 1920px) {
-      transform: translateY(-8%);
+      transform: translateY(-6%);
     }
     @media (min-width: 1600px) {
       transform: translateY(0%);
