@@ -2061,7 +2061,7 @@ body::-webkit-scrollbar {
   width: auto;
   height: auto;
   border-radius: 5px;
-  z-index: 1122;
+  z-index: 1125;
   opacity: 0;
   visibility: hidden;
 }
